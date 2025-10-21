@@ -1,40 +1,48 @@
 <template>
-    <div class="relative min-h-[calc(100vh-4rem)]">
-        <!-- Background Image -->
-        <NuxtImg src="/back.jpeg" alt="Background" class="absolute inset-0 w-full h-full object-cover -z-10" />
+    <div class="relative flex flex-col h-screen">
+        <!-- Background Image (behind everything) -->
+        <NuxtImg src="/first.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover -z-10" />
 
-        <!-- Content Container -->
-        <div class="relative container mx-auto px-4 py-12 md:py-20 lg:py-24">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-8rem)]">
+        <!-- Transparent Overlay -->
+        <div class="absolute inset-0 bg-black/30 -z-10"></div>
 
-                <!-- Left Side: Header & Description -->
-                <div class="text-white space-y-6">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                        Reliable Auto Transport Across America
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-100 leading-relaxed">
-                        Ship your vehicle anywhere in the nation with confidence. Our TruePrice Guarantee locks in your
-                        quoted price for 30 days—no hidden fees, no surprises.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <div class="flex items-center gap-2">
-                            <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
-                            <span class="text-sm md:text-base">Nationwide Coverage</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
-                            <span class="text-sm md:text-base">Price Guarantee</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
-                            <span class="text-sm md:text-base">Trusted Service</span>
+        <!-- Main Content -->
+        <div class="relative flex-1">
+            <!-- Content Container -->
+            <div class="relative container mx-auto px-4 h-full flex items-start pt-12 sm:pt-16 md:pt-20 lg:pt-24">
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16 xl:gap-24 w-full">
+                    <div class="text-white space-y-4 sm:space-y-6 max-w-2xl lg:max-w-xl">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                            Reliable Auto Transport Across America
+                        </h1>
+                        <p class="text-base sm:text-lg md:text-xl text-gray-100 leading-relaxed">
+                            Ship your vehicle anywhere in the nation with confidence. Our TruePrice Guarantee locks in
+                            your
+                            quoted price for 30 days—no hidden fees, no surprises.
+                        </p>
+                        <div class="flex flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                                <span class="text-sm md:text-base">Nationwide Coverage</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                                <span class="text-sm md:text-base">Price Guarantee</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                                <span class="text-sm md:text-base">Trusted Service</span>
+                            </div>
                         </div>
                     </div>
+                    <TopForm />
                 </div>
-                <!-- Right Side: Quote Form -->
-                <TopForm />
-                
             </div>
+        </div>
+
+        <!-- Slider Section -->
+        <div class="relative h-23 sm:h-27 w-full z-10">
+            <Slider />
         </div>
     </div>
 </template>

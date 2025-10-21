@@ -4,44 +4,75 @@
         <video src="@/assets/video.webm" autoplay muted playsinline loop
             class="absolute inset-0 w-full h-full object-cover z-0"></video>
 
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <!-- Overlay with Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 z-10"></div>
 
         <!-- Content -->
-        <div class="relative z-20 px-4 py-16 sm:px-6 lg:px-8 xl:px-16">
+        <div class="relative z-20 px-4 py-20 sm:px-6 lg:px-8 xl:px-16">
             <div class="max-w-7xl mx-auto">
                 <!-- Header Section -->
-                <div class="text-center mb-12 lg:mb-16">
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6">
+                <div class="text-center mb-16 lg:mb-20">
+                    <!-- <div class="inline-block mb-6">
+                        <span class="bg-blue-500/20 backdrop-blur-sm text-blue-200 px-5 py-2 rounded-full text-sm font-semibold border border-blue-400/30">
+                            Why Choose Us
+                        </span>
+                    </div> -->
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 lg:mb-8">
                         Why Choose First Line Transport?
                     </h2>
-                    <p class="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
                         America's trusted car shipping experts delivering vehicles nationwide with unmatched
-                        reliability,
-                        safety, and customer service since day one.
+                        reliability, safety, and customer service since day one.
                     </p>
                 </div>
+
                 <!-- Features Grid -->
-                <div class="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                     <div v-for="(item, index) in whyus" :key="index"
-                        class="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 sm:p-8 lg:p-10 hover:bg-white/15 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl w-full sm:w-[calc(50%-1rem)] lg:w-[calc(50%-1.25rem)] xl:w-[calc(50%-1.25rem)]">
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 h-full">
-                            <!-- Icon -->
-                            <div
-                                class="flex-shrink-0 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-blue-500/80 backdrop-blur-sm border border-blue-400/30">
-                                <Icon :name="item.icon" size="34" class="text-white sm:w-7 sm:h-7" />
+                        class="group backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 lg:p-10 hover:bg-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:border-blue-400/40">
+                        
+                        <div class="flex flex-col h-full">
+                            <!-- Icon and Title Row -->
+                            <div class="flex items-start gap-5 mb-6">
+                                <!-- Icon -->
+                                <div
+                                    class="flex-shrink-0 flex items-center justify-center w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-blue-500/90 to-blue-600/90 backdrop-blur-sm border border-blue-400/40 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                                    <UIcon :name="item.icon" size="36" class="text-white" />
+                                </div>
+
+                                <!-- Title -->
+                                <div class="flex-1 pt-2">
+                                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors duration-300">
+                                        {{ item.title }}
+                                    </h3>
+                                    <div class="h-1 w-16 bg-gradient-to-r from-blue-400 to-transparent rounded-full group-hover:w-24 transition-all duration-500"></div>
+                                </div>
                             </div>
 
-                            <!-- Content -->
-                            <div class="flex-1">
-                                <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">
-                                    {{ item.title }}
-                                </h3>
-                                <p class="text-gray-200 text-base sm:text-lg leading-relaxed">
-                                    {{ item.description }}
-                                </p>
-                            </div>
+                            <!-- Description -->
+                            <p class="text-gray-200 text-base lg:text-lg leading-relaxed flex-1">
+                                {{ item.description }}
+                            </p>
+
+                            <!-- Hover Indicator -->
+                            <!-- <div class="mt-6 flex items-center text-blue-300 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span>Learn More</span>
+                                <UIcon name="heroicons-solid:arrow-right" size="16" 
+                                    class="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                            </div> -->
                         </div>
+                    </div>
+                </div>
+
+                <!-- Bottom CTA -->
+                <div class="mt-16 text-center">
+                    <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 lg:p-10 inline-block">
+                        <p class="text-white text-xl lg:text-2xl font-semibold mb-6">
+                            Ready to ship your vehicle with confidence?
+                        </p>
+                        <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-10 py-4 rounded-xl cursor-pointer transition-all duration-300 shadow-2xl hover:shadow-blue-500/50 hover:scale-105">
+                            Get Free Quote Now
+                        </button>
                     </div>
                 </div>
             </div>
@@ -52,22 +83,22 @@
 <script setup>
 const whyus = ref([
     {
-        icon: 'line-md:speedometer-loop',
+        icon: 'heroicons:rocket-launch-solid',
         title: 'Lightning-Fast Delivery',
         description: `Skip the 2,000+ mile road trip. We handle everything from pickup to doorstep delivery across all 50 states. Our advanced logistics network ensures your vehicle arrives on time, every time—typically within 1-7 days nationwide.`
     },
     {
-        icon: 'ic:round-health-and-safety',
+        icon: 'heroicons:shield-check-solid',
         title: 'Vehicle Protection',
         description: `Your car travels with $1M+ insurance coverage and GPS tracking. From exotic supercars to family sedans, we use enclosed carriers for premium vehicles and trusted open transport for standard cars—all with white-glove care.`
     },
     {
-        icon: 'healthicons:low-income-level',
+        icon: 'heroicons:currency-dollar-solid',
         title: 'Guaranteed Lowest Prices',
         description: `Our TruePrice Guarantee locks in your rate for 30 days—no hidden fees, no surprises. Save thousands compared to driving (gas, hotels, wear & tear). Get instant quotes and pay only when your car is safely delivered.`
     },
     {
-        icon: 'lets-icons:setting-fill',
+        icon: 'heroicons:cog-6-tooth-solid',
         title: 'Custom Transport Solutions',
         description: `Door-to-door or terminal pickup, open or enclosed carriers, expedited or economy shipping. Whether you're relocating, buying online, or need seasonal transport—we customize every shipment to fit your timeline and budget.`
     },

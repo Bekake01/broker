@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-[calc(100vh + 10rem)] ">
+    <div class="min-h-[calc(100vh + 10rem)] space-y-8">
         <!-- <div class="h-0 fixed top-0 left-0 w-full">
             <Newhead />
         </div> -->
@@ -7,12 +7,16 @@
         <div>
             <Top />
         </div>
-        <div class="px-0 md:px-[10rem] mb-[5rem]">
-            <Whyus />
-            <Cartype />
-            <Services />
+        <div class="mb-[5rem]">
+            <div class="px-4 md:px-[10rem]">
+                <Whyus />
+                <Cartype />
+                <Services />
+            </div>
+            <Blog />
+            <Questions />
         </div>
-        <Footer />
+        <Footer/>
     </div>
 </template>
 <script setup>

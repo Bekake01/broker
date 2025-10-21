@@ -1,17 +1,17 @@
 <template>
-    <div class="backdrop-blur-md bg-gray-50/95 rounded-2xl shadow-2xl w-max border border-gray-300 p-6 md:p-8">
+    <div
+        class="backdrop-blur-md bg-gray-50/55 rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg border border-gray-300 p-4 sm:p-6 md:p-8">
         <!-- Step Header -->
-        <h2 class="text-2xl md:text-3xl text-center font-bold text-gray-900 mb-3">
+        <h2 class="text-xl sm:text-2xl md:text-3xl text-center font-bold text-gray-900 mb-3">
             {{ stepHeaders[currentStep - 1] }}
         </h2>
 
         <!-- Progress Bar -->
-        <div class="mb-7">
+        <div class="mb-6 md:mb-7">
             <div class="h-2 bg-gray-300/50 rounded-full overflow-hidden">
                 <div class="h-full bg-yellow-300 rounded-full transition-all duration-300"
                     :style="{ width: `${(currentStep / 3) * 100}%` }"></div>
             </div>
-            <!-- <p class="text-sm text-gray-600 mt-2">Step {{ currentStep }} of 3</p> -->
         </div>
 
         <!-- Step 1: Locations -->
@@ -20,7 +20,7 @@
                 <UFormField name="from_location" label="Pick-up Location" class="w-full">
                     <USelectMenu v-model="state.from_location" v-model:search-term="fromSearchTerm"
                         :items="fromLocations" :search-input="{ placeholder: 'Type city name...' }" label-key="display"
-                        size="xl" class="w-full" />
+                        size="lg" class="w-full" />
                 </UFormField>
 
                 <UFormField name="to_location" label="Delivery Location" class="w-full">
@@ -38,21 +38,21 @@
         <!-- Step 2: Vehicle Details -->
         <div v-if="currentStep === 2">
             <UForm :schema="vehicleSchema" :state="currentVehicle" class="space-y-4">
-                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <UFormField name="vehicle_year" label="Year" class="min-w-[220px]">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <UFormField name="vehicle_year" label="Year" class="w-full">
                         <UInputNumber v-model="currentVehicle.vehicle_year" placeholder="2024" size="lg"
                             orientation="vertical" :format-options="{ useGrouping: false }" class="w-full" />
                     </UFormField>
 
-                    <UFormField name="vehicle_type" label="Make" class="min-w-[220px]">
+                    <UFormField name="vehicle_type" label="Make" class="w-full">
                         <UInput v-model="currentVehicle.vehicle_type" placeholder="Toyota" size="lg" class="w-full" />
                     </UFormField>
 
-                    <UFormField name="vehicle_model" label="Model" class="min-w-[220px]">
+                    <UFormField name="vehicle_model" label="Model" class="w-full">
                         <UInput v-model="currentVehicle.vehicle_model" placeholder="Camry" size="lg" class="w-full" />
                     </UFormField>
                     <UFormField name="inop" label="Vehicle is Inoperable (INOP)"
-                        class="min-w-[220px] flex flex-col items-center">
+                        class="w-full flex flex-col sm:items-center">
                         <UCheckbox v-model="currentVehicle.inop" />
                     </UFormField>
                 </div>
@@ -72,8 +72,9 @@
                             icon="jam:delete-f" />
                     </div>
                 </div>
-                <div class="flex gap-3">
-                    <UButton @click="addVehicle" color="success" size="md" variant="outline" class="mt-4 w-[120px]">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <UButton @click="addVehicle" color="success" size="lg" variant="outline"
+                        class="mt-4 w-full sm:w-[180px] " block>
                         Add Vehicle
                     </UButton>
                     <UButton @click="nextStep" size="lg" block class="mt-4" icon="i-lucide-rocket">
@@ -94,11 +95,11 @@
                 </UFormField>
 
                 <UFormField name="ship_date" label="Preferred Ship Date" class="w-full">
-                    <UInput v-model="state.ship_date" type="date" size="lg" class="w-full"/>
+                    <UInput v-model="state.ship_date" type="date" size="lg" class="w-full" />
                 </UFormField>
 
                 <UFormField name="email" label="Email" class="w-full">
-                    <UInput v-model="state.email" type="email" size="lg" class="w-full" autocomplete="on"/>
+                    <UInput v-model="state.email" type="email" size="lg" class="w-full" autocomplete="on" />
                 </UFormField>
                 <div class="flex gap-3">
                     <UButton type="submit" size="lg" block>
@@ -261,7 +262,7 @@ function nextStep() {
         currentVehicle.vehicle_model = ''
         currentVehicle.inop = false
     }
-    if(currentStep.value < 3){
+    if (currentStep.value < 3) {
         currentStep.value++
     }
 }

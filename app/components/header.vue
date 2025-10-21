@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="w-full h-16 fixed top-0 left-0 z-50 transition-all duration-300 ease-in-out"
+        class="w-full h-16 fixed top-0 left-0 z-200 transition-all duration-300 ease-in-out"
         :class="[isScrolled 
                 ? 'bg-white/80 backdrop-blur-md shadow-lg' 
                 : 'bg-transparent'
