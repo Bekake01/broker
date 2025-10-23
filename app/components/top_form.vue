@@ -143,7 +143,7 @@ const stepHeaders = [
 ]
 
 // Current step
-const currentStep = ref(3)
+const currentStep = ref(1)
 
 // Step 1 Schema - Locations
 const step1Schema = z.object({

@@ -87,16 +87,9 @@
                 @click.stop
             >
                 <!-- Modal Header -->
-                <div class="flex items-center justify-between p-4 border-b">
+                <div class="flex items-center bg-black/25 justify-between p-4 ">
                     <NuxtImg src="/logo.png" class="h-10 w-auto" alt="First Line Transport"/>
-                    <button 
-                        @click="closeMobileMenu"
-                        class="p-2 text-gray-500 hover:text-gray-700 transition-colors"
-                    >
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                    </button>
+                    <UButton icon="heroicons:x-mark" variant="ghost" color="white" @click="closeMobileMenu" />
                 </div>
                 
                 <!-- Navigation Links -->

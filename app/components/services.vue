@@ -55,7 +55,7 @@
                         </ul>
 
                         <!-- Action Button -->
-                        <button
+                        <button @click="router.push(service.link)"
                             class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-3 rounded-xl cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md hover:shadow-xl">
                             <span>Learn More</span>
                             <UIcon name="heroicons-solid:arrow-right" size="18"
@@ -81,6 +81,7 @@
 </template>
 
 <script setup>
+const router = useRouter()
 const services = [
     {
         img: '/door.jpg',
@@ -91,18 +92,20 @@ const services = [
             'Maximum convenience',
             'No terminal visits required',
             'Flexible scheduling'
-        ]
+        ],
+        link: '/blogs/door-to-door'
     },
     {
         img: '/terminal.webp',
         icon: 'heroicons:building-office-2-solid',
-        title: 'Terminal Services',
-        description: 'Cost-effective option where you drop off and pick up your vehicle at designated terminals. Perfect for budget-conscious customers who don\'t mind a short drive.',
+        title: 'Hawaii & Alaska car shipping',
+        description: 'A cost-effective option where you drop off your vehicle at a designated mainland terminal and pick it up at a terminal in Hawaii or Alaska. Ideal for budget-conscious customers who are comfortable handling the travel to and from the ports.',
         features: [
             'Most economical option',
             'Secure storage facilities',
             'Extended hours available'
-        ]
+        ],
+        link: '/blogs/hawaii-alaska'
     },
     {
         img: '/open.jpg',
@@ -113,7 +116,8 @@ const services = [
             'Industry standard method',
             'Fast and reliable',
             'Best value for money'
-        ]
+        ],
+        link: '/blogs/open'
     },
     {
         img: '/enclosed.jpg',
@@ -124,7 +128,8 @@ const services = [
             'Complete weather protection',
             'Enhanced security',
             'Perfect for luxury vehicles'
-        ]
+        ],
+        link: '/blogs/enclosed'
     }
 ]
 </script>
