@@ -48,8 +48,13 @@ async function loadCities(): Promise<CityRecord[]> {
     // })
     // const csvRaw = await useStorage('assets:public').getItem('data/city.csv')
 
-    const filePath = join(process.cwd(), 'public', 'data', 'city.csv')
+    // const filePath = join(process.cwd(), 'public', 'data', 'city.csv')
+    // const raw = readFileSync(filePath, 'utf-8')
+
+    const filePath = join(process.cwd(), 'city.csv')
+
     const raw = readFileSync(filePath, 'utf-8')
+
     const records = parse(raw, {
       columns: [
         'zip',
