@@ -26,7 +26,9 @@ async function loadCities(): Promise<CityRecord[]> {
   }
 
   try {
-    const csvPath = resolve(process.cwd(), 'city.csv')
+    // const csvPath = resolve(process.cwd(), 'city.csv')
+    // const csvContent = await readFile(csvPath, 'utf-8')
+    const csvPath = resolve(process.cwd(), 'server/assets/city.csv')
     const csvContent = await readFile(csvPath, 'utf-8')
     
     const records = parse(csvContent, {
