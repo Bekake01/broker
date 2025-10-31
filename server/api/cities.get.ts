@@ -1,7 +1,5 @@
-import { parse } from 'csv-parse/sync'
-import { readFile } from 'fs/promises'
-import { fileURLToPath } from 'url'
-import { dirname, join } from 'path'
+// server/api/cities.get.ts
+import cities from './city.json'
 
 interface CityRecord {
   zip: string
@@ -25,89 +23,61 @@ export async function loadCities(): Promise<CityRecord[]> {
   if (citiesCache) return citiesCache
 
   try {
-    // ✅ Use import.meta.url so Nitro bundles file correctly
-    const __dirname = dirname(fileURLToPath(import.meta.url))
-    const filePath = join(__dirname, '../../node_modules/@app/cities/city.csv')
-
-    const raw = await readFile(filePath, 'utf-8')
-
-    const records = parse(raw, {
-      columns: [
-        'zip',
-        'col2',
-        'col3',
-        'city',
-        'state_id',
-        'state_name',
-        'col7',
-        'col8',
-        'col9',
-        'col10',
-        'col11',
-        'county_name',
-      ],
-      skip_empty_lines: true,
-      from_line: 2,
-    })
-
-    // ✅ Cache the parsed cities
-    citiesCache = records.map((r: any) => ({
+    // ✅ Directly use imported JSON (no CSV parsing)
+    citiesCache = cities.map((r: any) => ({
       zip: r.zip,
       city: r.city,
       state_id: r.state_id,
       state_name: r.state_name,
       county_name: r.county_name,
     }))
-
     return citiesCache
   } catch (err) {
-    console.error('Error loading city.csv:', err)
+    console.error('Error loading city.json:', err)
     return []
   }
 }
 
-
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   const searchTerm = (query.q as string)?.toLowerCase().trim()
-  
+
   if (!searchTerm || searchTerm.length < 2) {
     return []
   }
 
   const cities = await loadCities()
   const limit = parseInt(query.limit as string) || 10
-  
   const matches: CityResponse[] = []
-  
+
   for (const city of cities) {
     if (matches.length >= limit) break
-    
+
     const cityLower = city.city.toLowerCase()
     const zipMatch = city.zip.startsWith(searchTerm)
     const cityMatch = cityLower.includes(searchTerm)
-    
+
     if (zipMatch || cityMatch) {
       matches.push({
         zip: city.zip,
         city: city.city,
         state_id: city.state_id,
         county_name: city.county_name,
-        display: `${city.city}, ${city.state_id} ${city.zip}`
+        display: `${city.city}, ${city.state_id} ${city.zip}`,
       })
     }
   }
-  
-  // Sort results: exact zip matches first, then city matches
+
+  // ✅ Sort: zip matches first, then alphabetically
   matches.sort((a, b) => {
     const aZipMatch = a.zip.startsWith(searchTerm)
     const bZipMatch = b.zip.startsWith(searchTerm)
-    
+
     if (aZipMatch && !bZipMatch) return -1
     if (!aZipMatch && bZipMatch) return 1
-    
+
     return a.city.localeCompare(b.city)
   })
-  
+
   return matches
 })

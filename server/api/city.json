@@ -1,0 +1,16 @@
+[
+  {
+    "zip": "601",
+    "city": "Adjuntas",
+    "state_id": "PR",
+    "state_name": "Puerto Rico",
+    "county_name": "Adjuntas"
+  },
+  {
+    "zip": "602",
+    "city": "Aguada",
+    "state_id": "PR",
+    "state_name": "Puerto Rico",
+    "county_name": "Aguada"
+  }
+]
