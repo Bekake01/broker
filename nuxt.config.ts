@@ -30,11 +30,8 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
-    serverAssets: [
-      {
-        baseName: 'city',
-        dir: './server/assets'
-      }
-    ]
-  }
+  serverAssets: [
+    { baseName: 'cities', dir: 'node_modules/@app/cities' }
+  ]
+}
 })

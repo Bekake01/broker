@@ -1,9 +1,7 @@
 import { parse } from 'csv-parse/sync'
-import { resolve, dirname } from 'path'
-import { fileURLToPath } from 'url'
 import { readFile } from 'fs/promises'
-import { readFileSync } from 'fs'
-import { join } from 'path'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 
 interface CityRecord {
   zip: string
@@ -18,42 +16,20 @@ interface CityResponse {
   city: string
   state_id: string
   county_name: string
-  display: string 
+  display: string
 }
 
 let citiesCache: CityRecord[] | null = null
 
-async function loadCities(): Promise<CityRecord[]> {
-  if (citiesCache) {
-    return citiesCache
-  }
+export async function loadCities(): Promise<CityRecord[]> {
+  if (citiesCache) return citiesCache
 
   try {
-    
-    // const csvPath = resolve(process.cwd(), 'city.csv')
-    // const csvContent = await readFile(csvPath, 'utf-8')
-    // const csvPath = resolve(process.cwd(), 'server/assets/city.csv')
-    // const csvContent = await readFile(csvPath, 'utf-8')
+    // ✅ Use import.meta.url so Nitro bundles file correctly
+    const __dirname = dirname(fileURLToPath(import.meta.url))
+    const filePath = join(__dirname, '../../node_modules/@app/cities/city.csv')
 
-    // const __dirname = dirname(fileURLToPath(import.meta.url))
-    // const csvPath = resolve(__dirname, '../assets/city.csv')
-    // const csvContent = await readFile(csvPath, 'utf-8')
-    // const csvPath = join(process.cwd(), 'public', 'data', 'city.csv')
-    // const csvContent = await readFile(csvPath, 'utf-8')
-    
-    // const records = parse(csvContent, {
-    //   columns: ['zip', 'col2', 'col3', 'city', 'state_id', 'state_name', 'col7', 'col8', 'col9', 'col10', 'col11', 'county_name'],
-    //   skip_empty_lines: true,
-    //   from_line: 2 // Skip header
-    // })
-    // const csvRaw = await useStorage('assets:public').getItem('data/city.csv')
-
-    // const filePath = join(process.cwd(), 'public', 'data', 'city.csv')
-    // const raw = readFileSync(filePath, 'utf-8')
-
-    const filePath = join(process.cwd(), 'city.csv')
-
-    const raw = readFileSync(filePath, 'utf-8')
+    const raw = await readFile(filePath, 'utf-8')
 
     const records = parse(raw, {
       columns: [
@@ -71,23 +47,25 @@ async function loadCities(): Promise<CityRecord[]> {
         'county_name',
       ],
       skip_empty_lines: true,
-      from_line: 2, // Skip header line
+      from_line: 2,
     })
 
-    citiesCache = records.map((record: any) => ({
-      zip: record.zip?.trim() || '',
-      city: record.city?.trim() || '',
-      state_id: record.state_id?.trim() || '',
-      state_name: record.state_name?.trim() || '',
-      county_name: record.county_name?.trim() || ''
-    })).filter(record => record.zip && record.city && record.state_id)
+    // ✅ Cache the parsed cities
+    citiesCache = records.map((r: any) => ({
+      zip: r.zip,
+      city: r.city,
+      state_id: r.state_id,
+      state_name: r.state_name,
+      county_name: r.county_name,
+    }))
 
     return citiesCache
-  } catch (error) {
-    console.error('Error loading cities:', error)
+  } catch (err) {
+    console.error('Error loading city.csv:', err)
     return []
   }
 }
+
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
