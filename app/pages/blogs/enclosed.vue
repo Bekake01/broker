@@ -575,7 +575,15 @@
 </template>
 
 <script setup>
-const router = useRouter()
+useHead({
+    title: 'Enclosed Auto Transport | First Line Transport INC',
+    meta: [
+        {
+            name: 'description',
+            content: 'Enclosed car shipping is a premium vehicle-transport method where your car is carried inside a fully covered trailer rather than on an open carrier. Inside the trailer, the vehicle is shielded on all sides from weather, debris, and external exposure.'
+        }
+    ]
+})
 const modal = useState('globalModal', () => false)
 const consultantModal = useState('consultantModal', () => false)
 

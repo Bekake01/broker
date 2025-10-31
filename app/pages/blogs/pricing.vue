@@ -524,7 +524,7 @@
 
 // SEO Meta tags
 useHead({
-    title: 'Understanding Auto Transport Pricing | First Line Transport INC',
+    title: 'Transport Pricing Factors | First Line Transport INC',
     meta: [
         {
             name: 'description',
