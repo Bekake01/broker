@@ -1,7 +1,8 @@
 import { parse } from 'csv-parse/sync'
-import { readFile } from 'fs/promises'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
+import { readFile } from 'fs/promises'
+import { join } from 'path'
 
 interface CityRecord {
   zip: string
@@ -33,8 +34,10 @@ async function loadCities(): Promise<CityRecord[]> {
     // const csvPath = resolve(process.cwd(), 'server/assets/city.csv')
     // const csvContent = await readFile(csvPath, 'utf-8')
 
-    const __dirname = dirname(fileURLToPath(import.meta.url))
-    const csvPath = resolve(__dirname, '../assets/city.csv')
+    // const __dirname = dirname(fileURLToPath(import.meta.url))
+    // const csvPath = resolve(__dirname, '../assets/city.csv')
+    // const csvContent = await readFile(csvPath, 'utf-8')
+    const csvPath = join(process.cwd(), 'server', 'assets', 'city.csv')
     const csvContent = await readFile(csvPath, 'utf-8')
     
     const records = parse(csvContent, {
