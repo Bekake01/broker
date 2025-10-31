@@ -30,8 +30,8 @@
                 </NuxtLink>
             </nav> -->
             
-            <!-- Get Quote Button -->
-            <div class="flex-shrink-0" v-if="isScrolled">
+            <!-- Action Buttons -->
+            <div class="flex-shrink-0 flex gap-3" v-if="isScrolled">
                 <button @click="openModal()"
                     class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-2.5 rounded-xl cursor-pointer transition-all duration-300 flex items-center gap-2 group/btn shadow-md hover:shadow-xl hover:scale-105">
                     <span>Request a Quote</span>
@@ -59,11 +59,17 @@
                 <NuxtImg src="/logo.png" class="h-10 w-auto" alt="First Line Transport"/>
             </div>
             
-            <!-- Get Quote Button -->
-            <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
-            @click="openModal()">
-                    Get Quote
-            </button>
+            <!-- Action Buttons -->
+            <div class="flex gap-2">
+                <button class="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                @click="openConsultantModal()">
+                        Expert
+                </button>
+                <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                @click="openModal()">
+                        Get Quote
+                </button>
+            </div>
         </div>
     </div>
 
@@ -149,6 +155,7 @@ const openModal = () => {
     console.log('openModal')
     modal.value = !modal.value
 }
+
 
 const closeMobileMenu = () => {
     isMobileMenuOpen.value = false

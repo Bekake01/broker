@@ -546,7 +546,7 @@
                         <span @click="openModal()">Get Your Free Quote</span>
                     </button>
                     
-                    <button
+                    <button @click="openConsultantModal()"
                         class="bg-blue-500 text-white px-8 py-4 rounded-xl hover:bg-blue-400 transition-colors cursor-pointer font-bold text-lg shadow-lg hover:shadow-xl flex items-center gap-2 border-2 border-white">
                         <UIcon name="heroicons:phone-solid" size="24" />
                         <span>Speak with a Specialist</span>
@@ -577,8 +577,12 @@
 <script setup>
 const router = useRouter()
 const modal = useState('globalModal', () => false)
+const consultantModal = useState('consultantModal', () => false)
 
 function openModal(){
     modal.value = !modal.value
+}
+function openConsultantModal(){
+    consultantModal.value = !consultantModal.value
 }
 </script>

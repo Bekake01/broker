@@ -921,13 +921,13 @@
                     expert guidance and a free quote today.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button @click="openModal()"
+                    <button @click="openConsultantModal()"
                         class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
                         Get Free Consultation
                     </button>
                     <button
                         class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
-                        Call (XXX) XXX-XXXX
+                        Call +1 (929) 923-7706
                     </button>
                 </div>
                 <p class="text-sm text-blue-200 mt-6">Expert recommendations • All transport types available • No
@@ -938,10 +938,9 @@
 </template>
 
 <script setup>
-const modal = useState('globalModal', () => false)
-
-function openModal(){
-    modal.value = !modal.value
+const consultantModal = useState('consultantModal', () => false)
+function openConsultantModal(){
+    consultantModal.value = !consultantModal.value
 }
 // SEO Meta tags
 useHead({

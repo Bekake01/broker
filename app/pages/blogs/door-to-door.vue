@@ -527,7 +527,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button
+                    <button @click="openConsultantModal()"
                         class="bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl">
                         Get Free Consultation
                     </button>
@@ -603,7 +603,7 @@
                     </button>
                     <button
                         class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
-                        Call (XXX) XXX-XXXX
+                        Call +1 (929) 923-7706
                     </button>
                 </div>
                 <p class="text-sm text-blue-200 mt-6">No upfront payments • Full insurance coverage • TruePrice guarantee • 24/7 support</p>
@@ -614,9 +614,12 @@
 
 <script setup>
 const modal = useState('globalModal', () => false)
-
+const consultantModal = useState('consultantModal', () => false)
 function openModal(){
     modal.value = !modal.value
+}
+function openConsultantModal(){
+    consultantModal.value = !consultantModal.value
 }
 // SEO Meta tags
 useHead({

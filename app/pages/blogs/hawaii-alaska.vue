@@ -552,7 +552,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button
+                    <button @click="openConsultantModal()"
                         class="bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl">
                         Get Expert Guidance
                     </button>
@@ -581,10 +581,6 @@
                         class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
                         Request a Quote Now
                     </button>
-                    <button
-                        class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
-                        Speak with Coordinator
-                    </button>
                 </div>
                 <p class="text-sm text-blue-200 mt-6">Experienced with non-contiguous states • Full coordination • No hidden fees • Fast responses</p>
             </div>
@@ -605,8 +601,11 @@ useHead({
 })
 
 const modal = useState('globalModal', () => false)
-
+const consultantModal = useState('consultantModal', () => false)
 function openModal(){
     modal.value = !modal.value
+}
+function openConsultantModal(){
+    consultantModal.value = !consultantModal.value
 }
 </script>

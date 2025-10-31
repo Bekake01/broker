@@ -492,7 +492,7 @@
                         class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
                         Get Your Free Quote
                     </button>
-                    <button
+                    <button @click="openConsultantModal()"
                         class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
                         Consult with a Specialist
                     </button>
@@ -506,9 +506,13 @@
 <script setup>
 // SEO Meta tags
 const modal = useState('globalModal', () => false)
+const consultantModal = useState('consultantModal', () => false)
 
 function openModal(){
     modal.value = !modal.value
+}
+function openConsultantModal(){
+    consultantModal.value = !consultantModal.value
 }
 useHead({
     title: 'Open Auto Transport Service | First Line Transport INC',
