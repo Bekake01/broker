@@ -28,5 +28,13 @@ export default defineNuxtConfig({
         lang: 'en',
       }
     }
+  },
+  nitro: {
+    serverAssets: [
+      {
+        baseName: 'city',
+        dir: './server/assets'
+      }
+    ]
   }
 })

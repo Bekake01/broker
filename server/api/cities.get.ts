@@ -2,6 +2,7 @@ import { parse } from 'csv-parse/sync'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { readFile } from 'fs/promises'
+import { readFileSync } from 'fs'
 import { join } from 'path'
 
 interface CityRecord {
@@ -29,13 +30,43 @@ async function loadCities(): Promise<CityRecord[]> {
 
   try {
     
-    const csvPath = join(process.cwd(), 'public', 'data', 'city.csv')
-    const csvContent = await readFile(csvPath, 'utf-8')
+    // const csvPath = resolve(process.cwd(), 'city.csv')
+    // const csvContent = await readFile(csvPath, 'utf-8')
+    // const csvPath = resolve(process.cwd(), 'server/assets/city.csv')
+    // const csvContent = await readFile(csvPath, 'utf-8')
+
+    // const __dirname = dirname(fileURLToPath(import.meta.url))
+    // const csvPath = resolve(__dirname, '../assets/city.csv')
+    // const csvContent = await readFile(csvPath, 'utf-8')
+    // const csvPath = join(process.cwd(), 'public', 'data', 'city.csv')
+    // const csvContent = await readFile(csvPath, 'utf-8')
     
-    const records = parse(csvContent, {
-      columns: ['zip', 'col2', 'col3', 'city', 'state_id', 'state_name', 'col7', 'col8', 'col9', 'col10', 'col11', 'county_name'],
+    // const records = parse(csvContent, {
+    //   columns: ['zip', 'col2', 'col3', 'city', 'state_id', 'state_name', 'col7', 'col8', 'col9', 'col10', 'col11', 'county_name'],
+    //   skip_empty_lines: true,
+    //   from_line: 2 // Skip header
+    // })
+    // const csvRaw = await useStorage('assets:public').getItem('data/city.csv')
+
+    const filePath = join(process.cwd(), 'public', 'data', 'city.csv')
+    const raw = readFileSync(filePath, 'utf-8')
+    const records = parse(raw, {
+      columns: [
+        'zip',
+        'col2',
+        'col3',
+        'city',
+        'state_id',
+        'state_name',
+        'col7',
+        'col8',
+        'col9',
+        'col10',
+        'col11',
+        'county_name',
+      ],
       skip_empty_lines: true,
-      from_line: 2 // Skip header
+      from_line: 2, // Skip header line
     })
 
     citiesCache = records.map((record: any) => ({
