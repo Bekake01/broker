@@ -18,7 +18,7 @@ interface CityResponse {
   city: string
   state_id: string
   county_name: string
-  display: string
+  display: string 
 }
 
 let citiesCache: CityRecord[] | null = null
