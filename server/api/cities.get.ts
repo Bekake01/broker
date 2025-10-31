@@ -1,5 +1,8 @@
 // server/api/cities.get.ts
-import cities from './city.json'
+// import cities from './city.json'
+
+import citiesRaw from './city.json'
+const cities = citiesRaw as CityRecord[];
 
 interface CityRecord {
   zip: string
