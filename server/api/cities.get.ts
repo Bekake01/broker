@@ -5,7 +5,7 @@ import citiesRaw from './city.json'
 const cities = citiesRaw as CityRecord[];
 
 interface CityRecord {
-  zip: string
+  zip: number | string
   city: string
   state_id: string
   state_name: string
@@ -28,11 +28,11 @@ export async function loadCities(): Promise<CityRecord[]> {
   try {
     // ✅ Directly use imported JSON (no CSV parsing)
     citiesCache = cities.map((r: any) => ({
-      zip: r.zip,
-      city: r.city,
-      state_id: r.state_id,
-      state_name: r.state_name,
-      county_name: r.county_name,
+      zip: String(r.zip), // Convert zip to string
+      city: String(r.city || ''),
+      state_id: String(r.state_id || ''),
+      state_name: String(r.state_name || ''),
+      county_name: String(r.county_name || ''),
     }))
     return citiesCache
   } catch (err) {
@@ -56,25 +56,26 @@ export default defineEventHandler(async (event) => {
   for (const city of cities) {
     if (matches.length >= limit) break
 
-    const cityLower = city.city.toLowerCase()
-    const zipMatch = city.zip.startsWith(searchTerm)
+    const cityLower = String(city.city || '').toLowerCase()
+    const zipStr = String(city.zip || '')
+    const zipMatch = zipStr.startsWith(searchTerm)
     const cityMatch = cityLower.includes(searchTerm)
 
     if (zipMatch || cityMatch) {
       matches.push({
-        zip: city.zip,
+        zip: zipStr,
         city: city.city,
         state_id: city.state_id,
         county_name: city.county_name,
-        display: `${city.city}, ${city.state_id} ${city.zip}`,
+        display: `${city.city}, ${city.state_id} ${zipStr}`,
       })
     }
   }
 
   // ✅ Sort: zip matches first, then alphabetically
   matches.sort((a, b) => {
-    const aZipMatch = a.zip.startsWith(searchTerm)
-    const bZipMatch = b.zip.startsWith(searchTerm)
+    const aZipMatch = String(a.zip).startsWith(searchTerm)
+    const bZipMatch = String(b.zip).startsWith(searchTerm)
 
     if (aZipMatch && !bZipMatch) return -1
     if (!aZipMatch && bZipMatch) return 1
