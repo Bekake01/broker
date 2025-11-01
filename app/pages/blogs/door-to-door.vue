@@ -12,15 +12,8 @@
                     </li>
                     <li class="text-gray-400">/</li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <NuxtLink to="/blogs" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
-                            <span itemprop="name">Blog</span>
-                        </NuxtLink>
-                        <meta itemprop="position" content="2" />
-                    </li>
-                    <li class="text-gray-400">/</li>
-                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         <span itemprop="name" class="text-gray-700">Door-to-Door Car Shipping</span>
-                        <meta itemprop="position" content="3" />
+                        <meta itemprop="position" content="2" />
                     </li>
                 </ol>
             </div>
@@ -793,12 +786,6 @@ useJsonld({
             position: 1,
             name: 'Home',
             item: 'https://fltransportinc.com'
-        },
-        {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Blog',
-            item: 'https://fltransportinc.com/blogs'
         },
         {
             '@type': 'ListItem',
