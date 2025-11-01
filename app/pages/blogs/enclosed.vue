@@ -1,14 +1,47 @@
 <template>
     <div class="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="bg-white border-b border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Home</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/blogs" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Blog</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name" class="text-gray-700">Enclosed Auto Transport</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Image Section -->
         <div class="relative h-[400px] md:h-[500px] overflow-hidden">
-            <NuxtImg src="/enclosed.jpg" alt="Enclosed Auto Transport Service"
-                class="w-full h-full object-cover" />
+            <NuxtImg 
+                src="/enclosed.jpg" 
+                alt="Enclosed auto transport trailer providing premium protection for luxury and classic vehicles"
+                class="w-full h-full object-cover"
+                loading="eager"
+                width="1920"
+                height="500"
+                title="Enclosed Auto Transport Service - First Line Transport INC"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center text-white px-4">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Enclosed Auto Transport</h1>
-                    <p class="text-xl md:text-2xl text-gray-200">Premium protection for your valuable vehicles</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Enclosed Auto Transport - Premium Protection</h1>
+                    <p class="text-xl md:text-2xl text-gray-200">Ultimate protection for luxury, classic, and exotic vehicles</p>
                 </div>
             </div>
         </div>
@@ -19,11 +52,11 @@
             <div class="mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6">What is Enclosed Car Shipping?</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Enclosed car shipping is a premium vehicle-transport method where your car is carried inside a fully covered trailer rather than on an open carrier. Inside the trailer, the vehicle is shielded on all sides from weather, debris, and external exposure.
+                    Enclosed car shipping is a premium vehicle-transport method where your car is carried inside a fully covered trailer rather than on an open carrier. Inside the trailer, the vehicle is shielded on all sides from weather, debris, and external exposure. This service is part of our comprehensive <NuxtLink to="/" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">auto transport services</NuxtLink> designed for high-value and specialty vehicles.
                 </p>
                 
                 <div class="bg-blue-50 rounded-xl p-6 border border-blue-200 mb-6">
-                    <h3 class="font-bold text-blue-900 mb-3">Key Features:</h3>
+                    <h3 class="font-bold text-blue-900 mb-3">Key Features of Enclosed Transport:</h3>
                     <ul class="space-y-2 text-sm text-blue-800">
                         <li class="flex items-start">
                             <span class="text-blue-600 font-bold mr-2">•</span>
@@ -39,6 +72,10 @@
                         </li>
                     </ul>
                 </div>
+
+                <p class="text-gray-700 leading-relaxed">
+                    While <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">open transport</NuxtLink> is suitable for most everyday vehicles, enclosed transport is the preferred choice for luxury cars, classic automobiles, exotic vehicles, and any car where maintaining pristine condition is paramount. This premium service can also be combined with <NuxtLink to="/blogs/door-to-door" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">door-to-door delivery</NuxtLink> for ultimate convenience.
+                </p>
             </div>
 
             <!-- How It Works -->
@@ -534,6 +571,80 @@
                 </div>
             </div>
 
+            <!-- FAQ Section -->
+            <div class="mb-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What is enclosed car shipping?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Enclosed car shipping is a premium vehicle transport method where your car is carried inside a fully covered trailer, providing complete protection from weather, debris, and external exposure. It's ideal for luxury, classic, and exotic vehicles.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How much does enclosed auto transport cost?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Enclosed auto transport costs 35-50% more than open transport. Prices range from $2.65/mile for short routes to $0.88/mile for long routes, with additional costs for luxury vehicles and specialized equipment like hydraulic lift gates.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">When should I choose enclosed transport?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Choose enclosed transport for luxury, classic, exotic vehicles, cars with low ground clearance, during extreme weather conditions, or when pristine condition is a priority and budget allows for premium protection.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How long does enclosed transport take?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Enclosed transport typically takes the same time as open transport (1-7 days depending on distance), but scheduling may require more advance notice due to limited availability of enclosed carriers.</p>
+                        </div>
+                    </div>
+
+                    <div class="pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What vehicles need enclosed transport?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Vehicles that benefit from enclosed transport include luxury cars, classic automobiles, exotic sports cars, vehicles with custom paint jobs, lowered cars, collectibles, and any high-value vehicle where maintaining pristine condition is essential.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mb-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Related Auto Transport Guides</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Open vs Enclosed Transport</h3>
+                        <p class="text-gray-700 mb-4">Compare open and enclosed transport methods to determine which option best fits your vehicle and budget needs.</p>
+                        <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Learn About Open Transport →
+                        </NuxtLink>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Door-to-Door Service</h3>
+                        <p class="text-gray-700 mb-4">Combine enclosed transport with door-to-door service for the ultimate in convenience and vehicle protection.</p>
+                        <NuxtLink to="/blogs/door-to-door" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Explore Door-to-Door Service →
+                        </NuxtLink>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="mb-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Conclusion</h2>
+                <p class="text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto mb-6">
+                    Enclosed auto transport is the premium choice for protecting valuable, luxury, classic, and exotic vehicles during shipping. While it costs more than open transport, the complete protection from weather, debris, and external hazards makes it worthwhile for high-value vehicles.
+                </p>
+                <p class="text-center text-gray-600 font-semibold">
+                    First Line Transport INC specializes in enclosed transport with trusted carriers, enhanced insurance coverage, and white-glove service for your valuable vehicles.
+                </p>
+            </div>
+
             <!-- CTA Section -->
             <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-2xl">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Ship Your Vehicle Safely?</h2>
@@ -574,16 +685,8 @@
     </div>
 </template>
 
-<script setup>
-useHead({
-    title: 'Enclosed Auto Transport | First Line Transport INC',
-    meta: [
-        {
-            name: 'description',
-            content: 'Enclosed car shipping is a premium vehicle-transport method where your car is carried inside a fully covered trailer rather than on an open carrier. Inside the trailer, the vehicle is shielded on all sides from weather, debris, and external exposure.'
-        }
-    ]
-})
+<script setup lang="ts">
+// Modal state management
 const modal = useState('globalModal', () => false)
 const consultantModal = useState('consultantModal', () => false)
 
@@ -593,4 +696,144 @@ function openModal(){
 function openConsultantModal(){
     consultantModal.value = !consultantModal.value
 }
+
+// SEO Meta Tags
+useHead({
+    title: 'Enclosed Auto Transport - Premium Vehicle Protection | First Line Transport INC',
+    meta: [
+        {
+            name: 'description',
+            content: 'Enclosed auto transport offers premium protection for luxury, classic, and exotic vehicles. Complete weather and debris protection with specialized equipment. Get your free quote today.'
+        },
+        {
+            name: 'keywords',
+            content: 'enclosed auto transport, enclosed car shipping, luxury car transport, classic car shipping, premium vehicle transport, covered car carrier'
+        },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'First Line Transport INC' }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://fltransportinc.com/blogs/enclosed' }
+    ],
+    htmlAttrs: {
+        lang: 'en'
+    }
+})
+
+// Open Graph & Social Media Meta
+useSeoMeta({
+    ogTitle: 'Enclosed Auto Transport - Premium Vehicle Protection',
+    ogDescription: 'Enclosed auto transport offers premium protection for luxury, classic, and exotic vehicles. Complete weather and debris protection with specialized equipment.',
+    ogUrl: 'https://fltransportinc.com/blogs/enclosed',
+    ogImage: 'https://fltransportinc.com/enclosed.jpg',
+    ogType: 'article',
+    ogLocale: 'en_US',
+    ogSiteName: 'First Line Transport INC',
+    
+    // Twitter Cards
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'Enclosed Auto Transport - Premium Vehicle Protection',
+    twitterDescription: 'Enclosed auto transport offers premium protection for luxury, classic, and exotic vehicles.',
+    twitterImage: 'https://fltransportinc.com/enclosed.jpg'
+})
+
+// Structured Data - Service Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Enclosed Auto Transport',
+    serviceType: 'Enclosed Car Shipping',
+    description: 'Premium enclosed auto transport service providing complete protection for luxury, classic, and exotic vehicles nationwide',
+    provider: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        url: 'https://fltransportinc.com',
+        logo: 'https://fltransportinc.com/logo.png'
+    },
+    areaServed: {
+        '@type': 'Country',
+        name: 'United States'
+    }
+})
+
+// Breadcrumbs Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://fltransportinc.com'
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://fltransportinc.com/blogs'
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Enclosed Auto Transport',
+            item: 'https://fltransportinc.com/blogs/enclosed'
+        }
+    ]
+})
+
+// Article Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Enclosed Auto Transport - Complete Guide to Premium Vehicle Protection',
+    description: 'Comprehensive guide to enclosed auto transport including benefits, costs, process, and when to choose premium vehicle protection.',
+    image: 'https://fltransportinc.com/enclosed.jpg',
+    datePublished: '2024-11-01',
+    dateModified: '2024-11-01',
+    author: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC'
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://fltransportinc.com/logo.png'
+        }
+    }
+})
+
+// FAQ Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'What is enclosed car shipping?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Enclosed car shipping is a premium vehicle transport method where your car is carried inside a fully covered trailer, providing complete protection from weather, debris, and external exposure.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'How much does enclosed auto transport cost?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Enclosed auto transport costs 35-50% more than open transport. Prices range from $2.65/mile for short routes to $0.88/mile for long routes, with additional costs for luxury vehicles and specialized equipment.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'When should I choose enclosed transport?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Choose enclosed transport for luxury, classic, exotic vehicles, cars with low ground clearance, during extreme weather, or when pristine condition is a priority and budget allows for premium protection.'
+            }
+        }
+    ]
+})
 </script>

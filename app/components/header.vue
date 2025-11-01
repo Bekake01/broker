@@ -10,8 +10,15 @@
         <div class="hidden lg:flex items-center justify-between h-full px-4 sm:px-6 lg:px-8 xl:px-30">
             <!-- Logo -->
             <div class="flex-shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300" @click="scrollto()">
-                <NuxtImg src="/logo.png" class="h-14 w-auto" alt="First Line Transport"/>
-            </div>
+                <NuxtImg 
+                    src="/logo.png" 
+                    class="h-14 w-auto" 
+                    alt="First Line Transport - Professional Auto Transport Services"
+                    loading="eager"
+                    />
+                </div>
+                <!-- width="160"
+                height="56" -->
             
             <!-- Navigation Links -->
             <!-- <nav class="flex items-center space-x-2 px-8 py-2 rounded-3xl border transition-all duration-300"
@@ -39,35 +46,28 @@
             </div>
         </div>
 
+        <!-- Mobile Layout - Logo and single button only -->
         <div class="lg:hidden flex items-center justify-between h-full px-4">
-            <!-- Menu Icon -->
-            <!-- <button 
-                @click="toggleMobileMenu"
-                class="p-2 rounded-lg transition-all duration-300 hover:scale-110"
-                :class="[isScrolled 
-                    ? 'text-gray-700 hover:bg-gray-100' 
-                    : 'text-white hover:bg-white/10'
-                ]"
-            >
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button> -->
-            
             <!-- Logo -->
-            <div class="flex-shrink-0">
-                <NuxtImg src="/logo.png" class="h-10 w-auto" alt="First Line Transport"/>
+            <div class="flex-shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300" @click="scrollto()">
+                <NuxtImg 
+                    src="/logo.png" 
+                    class="h-10 w-auto" 
+                    alt="First Line Transport - Auto Transport Services"
+                    loading="eager"
+                    width="120"
+                    height="40"
+                />
             </div>
             
-            <!-- Action Buttons -->
-            <div class="flex gap-2">
-                <button class="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
-                @click="openConsultantModal()">
-                        Expert
-                </button>
-                <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
-                @click="openModal()">
-                        Get Quote
+            <!-- Single CTA Button for mobile -->
+            <div class="flex-shrink-0">
+                <button 
+                    @click="openModal()"
+                    class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    aria-label="Get free auto transport quote"
+                >
+                    Get Quote
                 </button>
             </div>
         </div>
@@ -152,8 +152,13 @@ const toggleMobileMenu = () => {
 }
 
 const openModal = () => {
-    console.log('openModal')
     modal.value = !modal.value
+}
+
+const consultantModal = useState('consultantModal', () => false)
+
+const openConsultantModal = () => {
+    consultantModal.value = true
 }
 
 

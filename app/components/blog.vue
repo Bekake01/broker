@@ -1,18 +1,20 @@
 <template>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="text-center mb-16">
+        <header class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">Auto Transport Insights</h2>
             <p class="text-lg text-gray-600">Everything you need to know about vehicle shipping</p>
-        </div>
+        </header>
 
         <!-- Blog 1: Pricing Factors (Image Left) -->
-        <div class="mb-20 flex flex-col lg:flex-row items-center gap-8">
+        <article class="mb-20 flex flex-col lg:flex-row items-center gap-8">
             <div class="w-full lg:w-1/2">
-                <NuxtImg src="/pricing.webp" alt="Car transportation pricing factors"
-                    class="w-full h-[400px] object-cover rounded-lg shadow-lg" @click="router.push('/blogs/pricing')"/>
+                <NuxtImg src="/pricing.webp" alt="Car transportation pricing factors and cost breakdown"
+                    class="w-full h-[400px] object-cover rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                    @click="router.push('/blogs/pricing')" loading="lazy" width="600" height="400" format="webp"
+                    quality="80" />
             </div>
             <div class="w-full lg:w-1/2">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Understanding Pricing Factors</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Understanding Auto Transport Pricing Factors</h3>
                 <p class="text-gray-700 mb-4">Several key factors influence the cost of car transport. Knowing these
                     helps you get accurate quotes:</p>
                 <ul class="space-y-2 mb-6">
@@ -48,16 +50,18 @@
                         class="group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </button>
             </div>
-        </div>
+        </article>
 
         <!-- Blog 2: Common Mistakes (Text Left) -->
-        <div class="mb-20 flex flex-col lg:flex-row-reverse items-center gap-8">
+        <article class="mb-20 flex flex-col lg:flex-row-reverse items-center gap-8">
             <div class="w-full lg:w-1/2">
-                <NuxtImg src="/mistakes.jpg" alt="Common car transport mistakes to avoid"
-                    class="w-full h-[400px] object-cover rounded-lg shadow-lg" @click="router.push('/blogs/mistakes')"/>
+                <NuxtImg src="/mistakes.jpg" alt="Common car transport mistakes to avoid when shipping vehicles"
+                    class="w-full h-[400px] object-cover rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                    @click="router.push('/blogs/mistakes')" loading="lazy" width="600" height="400" format="webp"
+                    quality="80" />
             </div>
             <div class="w-full lg:w-1/2">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Common Mistakes to Avoid</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Common Auto Transport Mistakes to Avoid</h3>
                 <p class="text-gray-700 mb-4">Protect yourself by avoiding these common pitfalls when choosing a
                     transport service:</p>
                 <ul class="space-y-3 mb-6">
@@ -88,16 +92,18 @@
                         class="group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </button>
             </div>
-        </div>
+        </article>
 
         <!-- Blog 3: Preparing for Shipping (Image Left) -->
-        <div class="mb-20 flex flex-col lg:flex-row items-center gap-8">
+        <article class="mb-20 flex flex-col lg:flex-row items-center gap-8">
             <div class="w-full lg:w-1/2">
-                <NuxtImg src="/prepare.jpg" alt="Preparing your vehicle for transportation"
-                    class="w-full h-[400px] object-cover rounded-lg shadow-lg" @click="router.push('/blogs/prepare')"/>
+                <NuxtImg src="/prepare.jpg" alt="Preparing your vehicle for auto transport - essential checklist"
+                    class="w-full h-[400px] object-cover rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                    @click="router.push('/blogs/prepare')" loading="lazy" width="600" height="400" format="webp"
+                    quality="80" />
             </div>
             <div class="w-full lg:w-1/2">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Preparing for Car Shipping</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">How to Prepare Your Car for Shipping</h3>
                 <p class="text-gray-700 mb-4">Follow this simple checklist to ensure your vehicle is ready for
                     transport:</p>
                 <div class="space-y-3 mb-6">
@@ -129,16 +135,18 @@
                         class="group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </button>
             </div>
-        </div>
+        </article>
 
         <!-- Blog 4: Vehicle Inspection (Text Left) -->
-        <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
+        <article class="flex flex-col lg:flex-row-reverse items-center gap-8">
             <div class="w-full lg:w-1/2">
-                <NuxtImg src="/about.webp" alt="Inspecting vehicle condition before transport"
-                    class="w-full h-[400px] object-cover rounded-lg shadow-lg" @click="router.push('/blogs/transport_type')"/>
+                <NuxtImg src="/about.webp" alt="Choosing the right auto transport type - open vs enclosed carriers"
+                    class="w-full h-[400px] object-cover rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                    @click="router.push('/blogs/transport_type')" loading="lazy" width="600" height="400" format="webp"
+                    quality="80" />
             </div>
             <div class="w-full lg:w-1/2">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Choosing the Right Transport Type</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Choosing the Right Auto Transport Type</h3>
                 <p class="text-gray-700 mb-4">Proper documentation protects both you and the carrier. Here's why it
                     matters:</p>
                 <div class="space-y-4 mb-6">
@@ -169,7 +177,7 @@
                         class="group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </button>
             </div>
-        </div>
+        </article>
     </div>
 </template>
 <script setup>

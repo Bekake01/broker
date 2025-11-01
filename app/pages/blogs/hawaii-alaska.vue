@@ -1,14 +1,47 @@
 <template>
     <div class="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="bg-white border-b border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Home</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/blogs" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Blog</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name" class="text-gray-700">Hawaii & Alaska Car Shipping</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Image Section -->
         <div class="relative h-[400px] md:h-[500px] overflow-hidden">
-            <NuxtImg src="/hawai.jpg" alt="Hawaii & Alaska car shipping"
-                class="w-full h-full object-cover" />
+            <NuxtImg 
+                src="/hawai.jpg" 
+                alt="Hawaii and Alaska car shipping service with maritime transport and beautiful island scenery"
+                class="w-full h-full object-cover"
+                loading="eager"
+                width="1920"
+                height="500"
+                title="Hawaii & Alaska Car Shipping Service - First Line Transport INC"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center text-white px-4">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hawaii & Alaska Car Shipping</h1>
-                    <p class="text-xl md:text-2xl text-gray-200">Complete guide to shipping vehicles to non-contiguous states</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hawaii & Alaska Car Shipping - Complete Guide</h1>
+                    <p class="text-xl md:text-2xl text-gray-200">Expert multimodal transport to non-contiguous states</p>
                 </div>
             </div>
         </div>
@@ -19,11 +52,15 @@
             <div class="mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6">From Islands or Frontier to the Lower 48: What It Takes</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Transporting a vehicle from Hawaii or Alaska into the contiguous U.S. is more complex than standard interstate auto transport. The process involves multiple legs—ocean or barge transit plus overland trucking—and coordination across different modes of transport. But it's entirely feasible, and many carriers specialize in it.
+                    Transporting a vehicle from Hawaii or Alaska into the contiguous U.S. is more complex than standard interstate <NuxtLink to="/" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">auto transport</NuxtLink>. The process involves multiple legs—ocean or barge transit plus overland trucking—and coordination across different modes of transport. But it's entirely feasible, and many carriers specialize in it.
                 </p>
                 <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
                     <p class="text-blue-900 text-sm"><span class="font-semibold">Important:</span> Whether you're relocating permanently, heading out for a military PCS, or simply need your car where it can't drive itself, shipping a vehicle to a non-contiguous state doesn't have to be confusing or stressful.</p>
                 </div>
+
+                <p class="text-gray-700 leading-relaxed mt-6">
+                    Unlike standard <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">open transport</NuxtLink> or <NuxtLink to="/blogs/enclosed" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">enclosed transport</NuxtLink> within the continental U.S., Hawaii and Alaska shipping requires specialized knowledge of maritime regulations, port operations, and multimodal coordination. This service can also be combined with <NuxtLink to="/blogs/door-to-door" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">door-to-door delivery</NuxtLink> for maximum convenience.
+                </p>
             </div>
 
             <!-- Why Ship Your Car -->
@@ -559,6 +596,69 @@
                 </div>
             </div>
 
+            <!-- FAQ Section -->
+            <div class="mb-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How much does it cost to ship a car to Hawaii or Alaska?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Hawaii car shipping costs $1,020-$1,800 depending on origin and destination. Alaska shipping costs $1,637+ from Anchorage to Tacoma, with in-state transport at $1.10-$1.75 per mile. Costs vary based on vehicle size, route, and seasonal demand.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How long does it take to ship a car to Hawaii or Alaska?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Hawaii shipping takes 9-45 days depending on port schedules and barge connections, especially for neighbor islands. Alaska maritime transport takes 6-7 days plus additional time for inland ground transit to your final destination.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What ports do you serve in Hawaii and Alaska?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Hawaii ports include Honolulu (Oahu), Hilo (Big Island), Kahului (Maui), and Nawiliwili (Kauai). Alaska ports include Anchorage, Fairbanks, and Kodiak (limited access, available on request).</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">Can I ship electric vehicles to Hawaii or Alaska?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Some carriers suspend acceptance of electric vehicles or plug-in hybrids due to lithium battery risks on sea vessels. Always check with your carrier about their EV policy before booking.</p>
+                        </div>
+                    </div>
+
+                    <div class="pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What should I do to prepare my vehicle for Hawaii or Alaska shipping?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Clean your vehicle inside and out, remove all personal items, reduce fuel to 1/4 tank or less, document existing damage with photos, and ensure you have all required paperwork including title and registration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mb-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Related Auto Transport Guides</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Open Transport Service</h3>
+                        <p class="text-gray-700 mb-4">Learn about our most popular transport method that can be combined with Hawaii and Alaska shipping for the mainland portion.</p>
+                        <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Read About Open Transport →
+                        </NuxtLink>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Door-to-Door Service</h3>
+                        <p class="text-gray-700 mb-4">Combine Hawaii/Alaska shipping with door-to-door service for ultimate convenience on the mainland portion of your transport.</p>
+                        <NuxtLink to="/blogs/door-to-door" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Explore Door-to-Door Service →
+                        </NuxtLink>
+                    </div>
+                </div>
+            </div>
+
             <!-- Conclusion -->
             <div class="mb-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Conclusion</h2>
@@ -588,24 +688,161 @@
     </div>
 </template>
 
-<script setup>
-// SEO Meta tags
-useHead({
-    title: 'Hawaii & Alaska Car Shipping | First Line Transport INC',
-    meta: [
-        {
-            name: 'description',
-            content: 'Complete guide to shipping vehicles to Hawaii and Alaska. Learn about costs, transit times, ports, and the complete process for non-contiguous state vehicle transport.'
-        }
-    ]
-})
-
+<script setup lang="ts">
+// Modal state management
 const modal = useState('globalModal', () => false)
 const consultantModal = useState('consultantModal', () => false)
+
 function openModal(){
     modal.value = !modal.value
 }
 function openConsultantModal(){
     consultantModal.value = !consultantModal.value
 }
+
+// SEO Meta Tags
+useHead({
+    title: 'Hawaii & Alaska Car Shipping - Complete Guide | First Line Transport INC',
+    meta: [
+        {
+            name: 'description',
+            content: 'Complete guide to shipping vehicles to Hawaii and Alaska. Learn about costs, transit times, ports, and the multimodal process for non-contiguous state vehicle transport.'
+        },
+        {
+            name: 'keywords',
+            content: 'Hawaii car shipping, Alaska car shipping, non-contiguous state vehicle transport, island car shipping, maritime auto transport, Hawaii Alaska vehicle shipping'
+        },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'First Line Transport INC' }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://fltransportinc.com/blogs/hawaii-alaska' }
+    ],
+    htmlAttrs: {
+        lang: 'en'
+    }
+})
+
+// Open Graph & Social Media Meta
+useSeoMeta({
+    ogTitle: 'Hawaii & Alaska Car Shipping - Complete Guide',
+    ogDescription: 'Complete guide to shipping vehicles to Hawaii and Alaska. Learn about costs, transit times, ports, and the multimodal process for non-contiguous state vehicle transport.',
+    ogUrl: 'https://fltransportinc.com/blogs/hawaii-alaska',
+    ogImage: 'https://fltransportinc.com/hawai.jpg',
+    ogType: 'article',
+    ogLocale: 'en_US',
+    ogSiteName: 'First Line Transport INC',
+    
+    // Twitter Cards
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'Hawaii & Alaska Car Shipping - Complete Guide',
+    twitterDescription: 'Complete guide to shipping vehicles to Hawaii and Alaska. Learn about costs, transit times, and the complete process.',
+    twitterImage: 'https://fltransportinc.com/hawai.jpg'
+})
+
+// Structured Data - Service Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Hawaii & Alaska Car Shipping',
+    serviceType: 'Non-Contiguous State Vehicle Transport',
+    description: 'Specialized car shipping service to Hawaii and Alaska with multimodal transport including maritime and overland segments',
+    provider: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        url: 'https://fltransportinc.com',
+        logo: 'https://fltransportinc.com/logo.png'
+    },
+    areaServed: [
+        {
+            '@type': 'State',
+            name: 'Hawaii'
+        },
+        {
+            '@type': 'State',
+            name: 'Alaska'
+        }
+    ]
+})
+
+// Breadcrumbs Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://fltransportinc.com'
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://fltransportinc.com/blogs'
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Hawaii & Alaska Car Shipping',
+            item: 'https://fltransportinc.com/blogs/hawaii-alaska'
+        }
+    ]
+})
+
+// Article Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Hawaii & Alaska Car Shipping - Complete Guide to Non-Contiguous State Vehicle Transport',
+    description: 'Comprehensive guide to shipping vehicles to Hawaii and Alaska including costs, process, ports, and expert tips for successful transport.',
+    image: 'https://fltransportinc.com/hawai.jpg',
+    datePublished: '2024-11-01',
+    dateModified: '2024-11-01',
+    author: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC'
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://fltransportinc.com/logo.png'
+        }
+    }
+})
+
+// FAQ Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'How much does it cost to ship a car to Hawaii or Alaska?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Hawaii car shipping costs $1,020-$1,800 depending on origin and destination. Alaska shipping costs $1,637+ from Anchorage to Tacoma, with in-state transport at $1.10-$1.75 per mile.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'How long does it take to ship a car to Hawaii or Alaska?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Hawaii shipping takes 9-45 days depending on port schedules and connections. Alaska maritime transport takes 6-7 days plus additional time for inland ground transit.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'What ports do you serve in Hawaii and Alaska?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Hawaii ports include Honolulu (Oahu), Hilo (Big Island), Kahului (Maui), and Nawiliwili (Kauai). Alaska ports include Anchorage, Fairbanks, and Kodiak (limited access).'
+            }
+        }
+    ]
+})
 </script>

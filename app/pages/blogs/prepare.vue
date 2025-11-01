@@ -1,15 +1,47 @@
 <template>
     <div class="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="bg-white border-b border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Home</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/blogs" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Blog</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name" class="text-gray-700">Vehicle Preparation Guide</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Image Section -->
         <div class="relative h-[400px] md:h-[500px] overflow-hidden">
-            <NuxtImg src="/prep.webp" alt="Preparing Your Vehicle for Car Shipping"
-                class="w-full h-full object-cover" />
+            <NuxtImg 
+                src="/prep.webp" 
+                alt="Professional vehicle preparation for car shipping - cleaning and inspection process"
+                class="w-full h-full object-cover"
+                loading="eager"
+                width="1920"
+                height="500"
+                title="Vehicle Preparation for Shipping - First Line Transport INC"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center text-white px-4">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Preparing Your Vehicle for Shipping</h1>
-                    <p class="text-xl md:text-2xl text-gray-200">Complete guide to getting your car ready for transport
-                    </p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">How to Prepare Your Vehicle for Shipping</h1>
+                    <p class="text-xl md:text-2xl text-gray-200">Complete step-by-step guide for successful car transport</p>
                 </div>
             </div>
         </div>
@@ -18,11 +50,16 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <!-- Introduction -->
             <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Essential Steps for Successful Vehicle Transport</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Getting ready to ship a vehicle involves more than just handing over the keys. Proper preparation
-                    helps ensure a smooth transit, minimizes risk of extra fees or damage, and builds confidence in the
-                    shipping process. Below are the essential steps to prepare your vehicle for transport.
+                    Getting ready to ship a vehicle involves more than just handing over the keys. Whether you're using <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">open transport</NuxtLink>, <NuxtLink to="/blogs/enclosed" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">enclosed transport</NuxtLink>, or specialized services like <NuxtLink to="/blogs/hawaii-alaska" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">Hawaii & Alaska shipping</NuxtLink>, proper preparation is crucial for success.
                 </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Proper preparation helps ensure a smooth transit, minimizes risk of extra fees or damage, and builds confidence in the shipping process. Our comprehensive <NuxtLink to="/" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">auto transport services</NuxtLink> include detailed preparation guidance to help you avoid common pitfalls. Below are the essential steps to prepare your vehicle for transport.
+                </p>
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                    <p class="text-blue-900 text-sm"><span class="font-semibold">Pro Tip:</span> Following this preparation guide can help you avoid the <NuxtLink to="/blogs/mistakes" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">common car shipping mistakes</NuxtLink> that lead to delays and extra costs.</p>
+                </div>
             </div>
 
             <!-- Preparation Steps -->
@@ -961,6 +998,69 @@
                 </div>
             </div>
 
+            <!-- FAQ Section -->
+            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What should I remove from my car before shipping?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Remove all personal items, electronics, important documents, loose accessories, toll tags, and anything not permanently attached to the vehicle. Most transport companies do not insure personal belongings left inside the car.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How much fuel should I leave in my car for shipping?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Keep your fuel tank at 1/4 full. This provides enough fuel for loading and unloading operations without adding unnecessary weight or creating spill risks during transport.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">Why do I need to clean my car before shipping?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Cleaning your car makes pre-existing damage clearly visible during the inspection process. This protects you in case of damage claims and ensures accurate documentation on the Bill of Lading.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">Do I need to be present during pickup and delivery?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Yes, you or an authorized representative must be present during both pickup and delivery to conduct vehicle inspections, sign the Bill of Lading, and handle keys. This ensures proper documentation and protects your interests.</p>
+                        </div>
+                    </div>
+
+                    <div class="pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What happens if my car has mechanical problems?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">If your vehicle has mechanical issues or is non-operable, inform the shipping company in advance. Non-running vehicles require special handling equipment and may incur additional charges of $100-$300.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Related Auto Transport Guides</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Common Shipping Mistakes</h3>
+                        <p class="text-gray-700 mb-4">Learn about the top car shipping mistakes and how proper preparation can help you avoid costly errors and delays.</p>
+                        <NuxtLink to="/blogs/mistakes" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Read Mistakes Guide →
+                        </NuxtLink>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Open Transport Service</h3>
+                        <p class="text-gray-700 mb-4">Discover our most popular transport method and learn how proper preparation ensures smooth open transport service.</p>
+                        <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Explore Open Transport →
+                        </NuxtLink>
+                    </div>
+                </div>
+            </div>
+
             <!-- Final CTA -->
             <div class="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-center text-white">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Ship Your Vehicle?</h2>
@@ -969,13 +1069,13 @@
                     vehicle for a smooth, worry-free transport experience.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <!-- <button
+                    <button @click="openModal()"
                         class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
-                        Download Checklist
-                    </button> -->
+                        Get Free Quote
+                    </button>
                     <button @click="openModal()"
                         class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
-                        Get Free Quote
+                        Download Checklist
                     </button>
                 </div>
                 <p class="text-sm text-blue-200 mt-6">Expert preparation support • 24/7 assistance • No hidden fees</p>
@@ -984,21 +1084,178 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+// Modal state management
 const modal = useState('globalModal', () => false)
 
 function openModal(){
     modal.value = !modal.value
 }
-// SEO Meta tags
+
+// SEO Meta Tags
 useHead({
-    title: 'How to Prepare Your Vehicle for Shipping | First Line Transport INC',
+    title: 'How to Prepare Your Vehicle for Shipping - Complete Guide | First Line Transport INC',
     meta: [
         {
             name: 'description',
-            content: 'Complete guide to preparing your car for transport. Learn the essential steps, checklist, and best practices for a smooth vehicle shipping experience.'
+            content: 'Complete step-by-step guide to preparing your car for transport. Learn essential preparation steps, checklist, and best practices for smooth vehicle shipping.'
+        },
+        {
+            name: 'keywords',
+            content: 'prepare car for shipping, vehicle preparation checklist, car transport preparation, auto shipping preparation, vehicle shipping guide'
+        },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'First Line Transport INC' }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://fltransportinc.com/blogs/prepare' }
+    ],
+    htmlAttrs: {
+        lang: 'en'
+    }
+})
+
+// Open Graph & Social Media Meta
+useSeoMeta({
+    ogTitle: 'How to Prepare Your Vehicle for Shipping - Complete Guide',
+    ogDescription: 'Complete step-by-step guide to preparing your car for transport. Learn essential preparation steps, checklist, and best practices for smooth vehicle shipping.',
+    ogUrl: 'https://fltransportinc.com/blogs/prepare',
+    ogImage: 'https://fltransportinc.com/prep.webp',
+    ogType: 'article',
+    ogLocale: 'en_US',
+    ogSiteName: 'First Line Transport INC',
+    
+    // Twitter Cards
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'How to Prepare Your Vehicle for Shipping - Complete Guide',
+    twitterDescription: 'Complete step-by-step guide to preparing your car for transport. Essential preparation steps and checklist.',
+    twitterImage: 'https://fltransportinc.com/prep.webp'
+})
+
+// Structured Data - Article Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'How to Prepare Your Vehicle for Shipping - Complete Guide',
+    description: 'Comprehensive step-by-step guide to preparing your vehicle for transport including cleaning, documentation, mechanical checks, and preparation checklist.',
+    image: 'https://fltransportinc.com/prep.webp',
+    datePublished: '2024-11-01',
+    dateModified: '2024-11-01',
+    author: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC'
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://fltransportinc.com/logo.png'
+        }
+    }
+})
+
+// Breadcrumbs Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://fltransportinc.com'
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://fltransportinc.com/blogs'
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Vehicle Preparation Guide',
+            item: 'https://fltransportinc.com/blogs/prepare'
         }
     ]
 })
 
+// How-To Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Prepare Your Vehicle for Shipping',
+    description: 'Step-by-step guide to preparing your car for transport',
+    totalTime: 'PT2H',
+    step: [
+        {
+            '@type': 'HowToStep',
+            name: 'Clean Your Car Thoroughly',
+            text: 'Wash car inside and out, remove all dirt and debris to make pre-existing damage clearly visible for inspection.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Remove Personal Items',
+            text: 'Remove all personal belongings, electronics, and loose accessories from the vehicle for safety and insurance reasons.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Check for Mechanical Issues',
+            text: 'Inspect for leaks, ensure battery is charged, check tire pressure, and verify all fluids are topped off.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Maintain Quarter Tank Fuel',
+            text: 'Keep fuel level at 1/4 tank - enough for loading/unloading operations without excess weight.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Disable Alarms',
+            text: 'Turn off all car alarms and anti-theft devices to prevent activation during transport.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Document Vehicle Condition',
+            text: 'Take time-stamped photos from all angles and document any existing damage for insurance purposes.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Secure Loose Parts',
+            text: 'Remove or secure any loose accessories, antennas, or custom parts that could be damaged during transport.'
+        }
+    ]
+})
+
+// FAQ Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'What should I remove from my car before shipping?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Remove all personal items, electronics, important documents, loose accessories, toll tags, and anything not permanently attached to the vehicle. Most transport companies do not insure personal belongings.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'How much fuel should I leave in my car for shipping?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Keep your fuel tank at 1/4 full. This provides enough fuel for loading and unloading operations without adding unnecessary weight or creating spill risks during transport.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'Why do I need to clean my car before shipping?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Cleaning your car makes pre-existing damage clearly visible during the inspection process. This protects you in case of damage claims and ensures accurate documentation on the Bill of Lading.'
+            }
+        }
+    ]
+})
 </script>

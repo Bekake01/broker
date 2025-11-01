@@ -1,14 +1,47 @@
 <template>
     <div class="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="bg-white border-b border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Home</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/blogs" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Blog</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name" class="text-gray-700">Door-to-Door Car Shipping</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Image Section -->
         <div class="relative h-[400px] md:h-[500px] overflow-hidden">
-            <NuxtImg src="/door.jpg" alt="Door-to-Door Car Shipping Service"
-                class="w-full h-full object-cover" />
+            <NuxtImg 
+                src="/door.jpg" 
+                alt="Door-to-door car shipping service with professional carrier picking up vehicle at customer's home"
+                class="w-full h-full object-cover"
+                loading="eager"
+                width="1920"
+                height="500"
+                title="Door-to-Door Car Shipping Service - First Line Transport INC"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center text-white px-4">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Door-to-Door Car Shipping</h1>
-                    <p class="text-xl md:text-2xl text-gray-200">Ultimate convenience for your vehicle transport needs</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Door-to-Door Car Shipping - Ultimate Convenience</h1>
+                    <p class="text-xl md:text-2xl text-gray-200">Professional vehicle pickup and delivery at your location</p>
                 </div>
             </div>
         </div>
@@ -17,16 +50,20 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <!-- Introduction -->
             <div class="mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">What Is Door-to-Door Delivery?</h2>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">What Is Door-to-Door Car Shipping?</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Door-to-door delivery (also called door-to-door auto shipping) means that the transport carrier will pick up your vehicle at your specified address—home, business, or other agreed location—and deliver it directly to the drop-off address you've chosen.
+                    Door-to-door delivery (also called door-to-door auto shipping) means that the transport carrier will pick up your vehicle at your specified address—home, business, or other agreed location—and deliver it directly to the drop-off address you've chosen. This service is part of our comprehensive <NuxtLink to="/" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">auto transport services</NuxtLink> designed for maximum customer convenience.
                 </p>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Unlike terminal-to-terminal shipping (where you drop off the vehicle at a depot and someone else picks it up on the other end), door-to-door reduces the number of steps the customer must handle, providing maximum convenience and time savings.
+                    Unlike terminal-to-terminal shipping (where you drop off the vehicle at a depot and someone else picks it up on the other end), door-to-door reduces the number of steps the customer must handle, providing maximum convenience and time savings. This service works with both <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">open transport</NuxtLink> and enclosed transport methods.
                 </p>
                 <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
                     <p class="text-blue-900 text-sm"><span class="font-semibold">Important Note:</span> "Door" is often used loosely—if the carrier cannot safely enter a narrow street or building complex, they will arrange to load/unload at a nearby accessible location (large parking lot, commercial lot, etc.).</p>
                 </div>
+
+                <p class="text-gray-700 leading-relaxed mt-6">
+                    Door-to-door service is ideal for customers who value convenience and want to minimize the time and effort required for vehicle transport. It's particularly popular among busy professionals, families relocating, and anyone shipping valuable or luxury vehicles.
+                </p>
             </div>
 
             <!-- How It Works -->
@@ -579,6 +616,69 @@
                 </div>
             </div>
 
+            <!-- FAQ Section -->
+            <div class="mb-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What is door-to-door car shipping?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Door-to-door car shipping means the transport carrier picks up your vehicle at your specified address and delivers it directly to your destination address, providing maximum convenience and time savings compared to terminal services.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How much does door-to-door car shipping cost?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Door-to-door car shipping typically costs more than terminal service due to the added convenience. Costs vary based on distance, vehicle size, transport type (open vs enclosed), and accessibility of pickup/delivery locations. Contact us for a personalized quote.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">Can the carrier reach any address?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">While called "door-to-door," carriers may not reach every exact address due to narrow streets, low overhangs, or parking restrictions. In such cases, they arrange pickup/delivery at a nearby accessible location like a large parking lot or commercial area.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How long does door-to-door shipping take?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Door-to-door shipping typically takes 1-7 days depending on distance. Short routes (under 500 miles) usually take 1-3 days, while cross-country shipments average 5-7 days. The convenience of door-to-door service doesn't significantly impact transit time.</p>
+                        </div>
+                    </div>
+
+                    <div class="pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">Do I need to be present for pickup and delivery?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Yes, you or an authorized representative must be present during both pickup and delivery to inspect the vehicle, sign the bill of lading, and handle keys. This ensures proper documentation and protects both parties.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mb-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Related Auto Transport Guides</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Open Transport Service</h3>
+                        <p class="text-gray-700 mb-4">Learn about our most popular and cost-effective vehicle shipping method that works perfectly with door-to-door service.</p>
+                        <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Read About Open Transport →
+                        </NuxtLink>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">All Transport Services</h3>
+                        <p class="text-gray-700 mb-4">Explore all our auto transport services and find the perfect solution for your vehicle shipping needs.</p>
+                        <NuxtLink to="/" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            View All Services →
+                        </NuxtLink>
+                    </div>
+                </div>
+            </div>
+
             <!-- Conclusion -->
             <div class="mb-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Conclusion</h2>
@@ -612,22 +712,154 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+// Modal state management
 const modal = useState('globalModal', () => false)
 const consultantModal = useState('consultantModal', () => false)
+
 function openModal(){
     modal.value = !modal.value
 }
 function openConsultantModal(){
     consultantModal.value = !consultantModal.value
 }
-// SEO Meta tags
+
+// SEO Meta Tags
 useHead({
-    title: 'Door-to-Door Car Shipping Service | First Line Transport INC',
+    title: 'Door-to-Door Car Shipping - Ultimate Convenience | First Line Transport INC',
     meta: [
         {
             name: 'description',
-            content: 'Learn about door-to-door car shipping service. Convenient vehicle pickup and delivery directly at your location. Get transparent pricing and expert guidance from First Line Transport INC.'
+            content: 'Door-to-door car shipping offers ultimate convenience with pickup and delivery at your location. Learn costs, benefits, and process. Get your free quote today.'
+        },
+        {
+            name: 'keywords',
+            content: 'door to door car shipping, door to door auto transport, vehicle pickup delivery, convenient car shipping, home pickup car transport'
+        },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'First Line Transport INC' }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://fltransportinc.com/blogs/door-to-door' }
+    ],
+    htmlAttrs: {
+        lang: 'en'
+    }
+})
+
+// Open Graph & Social Media Meta
+useSeoMeta({
+    ogTitle: 'Door-to-Door Car Shipping - Ultimate Convenience',
+    ogDescription: 'Door-to-door car shipping offers ultimate convenience with pickup and delivery at your location. Learn costs, benefits, and process.',
+    ogUrl: 'https://fltransportinc.com/blogs/door-to-door',
+    ogImage: 'https://fltransportinc.com/door.jpg',
+    ogType: 'article',
+    ogLocale: 'en_US',
+    ogSiteName: 'First Line Transport INC',
+    
+    // Twitter Cards
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'Door-to-Door Car Shipping - Ultimate Convenience',
+    twitterDescription: 'Door-to-door car shipping offers ultimate convenience with pickup and delivery at your location.',
+    twitterImage: 'https://fltransportinc.com/door.jpg'
+})
+
+// Structured Data - Service Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Door-to-Door Car Shipping',
+    serviceType: 'Door-to-Door Auto Transport',
+    description: 'Convenient door-to-door car shipping service with pickup and delivery at your specified locations nationwide',
+    provider: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        url: 'https://fltransportinc.com',
+        logo: 'https://fltransportinc.com/logo.png'
+    },
+    areaServed: {
+        '@type': 'Country',
+        name: 'United States'
+    }
+})
+
+// Breadcrumbs Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://fltransportinc.com'
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://fltransportinc.com/blogs'
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Door-to-Door Car Shipping',
+            item: 'https://fltransportinc.com/blogs/door-to-door'
+        }
+    ]
+})
+
+// Article Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Door-to-Door Car Shipping - Complete Guide to Convenient Vehicle Transport',
+    description: 'Comprehensive guide to door-to-door car shipping including process, costs, benefits, and tips for choosing the right service.',
+    image: 'https://fltransportinc.com/door.jpg',
+    datePublished: '2024-11-01',
+    dateModified: '2024-11-01',
+    author: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC'
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://fltransportinc.com/logo.png'
+        }
+    }
+})
+
+// FAQ Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'What is door-to-door car shipping?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Door-to-door car shipping means the transport carrier picks up your vehicle at your specified address and delivers it directly to your destination address, providing maximum convenience and time savings.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'How much does door-to-door car shipping cost?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Door-to-door car shipping typically costs more than terminal service due to the added convenience. Costs vary based on distance, vehicle size, transport type, and accessibility of pickup/delivery locations.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'Can the carrier reach any address?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'While called "door-to-door," carriers may not reach every exact address due to narrow streets, low overhangs, or parking restrictions. In such cases, they arrange pickup/delivery at a nearby accessible location.'
+            }
         }
     ]
 })

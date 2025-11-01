@@ -1,33 +1,33 @@
 <template>
-    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50" aria-labelledby="transport-methods-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <header class="text-center mb-16">
+                <h2 id="transport-methods-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     Car Transport Shipping Methods
                 </h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     Choose from our comprehensive range of vehicle transport services designed to meet your specific
                     needs and budget requirements.
                 </p>
-            </div>
+            </header>
 
             <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div v-for="(service, index) in services" :key="service.title"
-                    class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-blue-200">
-
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" role="list">
+                <article v-for="(service, index) in services" :key="service.title"
+                    class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-blue-200"
+                    role="listitem">
                     <!-- Service Image with Overlay -->
                     <div class="relative h-64 overflow-hidden">
-                        <NuxtImg :src="service.img" :alt="service.title"
+                        <NuxtImg :src="service.img" :alt="`${service.title} - Professional auto transport service`"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            loading="lazy" />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        </div>
+                            loading="lazy" width="600" height="256" format="webp" quality="80" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            aria-hidden="true"></div>
 
                         <!-- Icon Badge -->
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg"
+                            aria-hidden="true">
                             <UIcon :name="service.icon" class="text-blue-600" size="24" />
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                                 class="group-hover/btn:translate-x-1 transition-transform duration-300" />
                         </button>
                     </div>
-                </div>
+                </article>
             </div>
 
             <!-- Bottom CTA -->

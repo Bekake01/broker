@@ -1,0 +1,102 @@
+{
+  "organization": "First Line Transport INC",
+  "industry": "Auto Transport & Car Shipping",
+  "established": "2014",
+  "description": "Professional auto transport and car shipping services across the United States with fast, reliable delivery and TruePrice guarantee.",
+  "topics": [
+    "Auto Transport",
+    "Car Shipping",
+    "Vehicle Transportation",
+    "Open Transport",
+    "Enclosed Transport",
+    "Door-to-Door Car Shipping",
+    "Hawaii Car Shipping",
+    "Alaska Car Shipping",
+    "Nationwide Car Shipping",
+    "Vehicle Logistics"
+  ],
+  "services": [
+    {
+      "name": "Open Auto Transport",
+      "description": "Cost-effective open carrier vehicle shipping for everyday cars",
+      "url": "https://fltransportinc.com/blogs/open"
+    },
+    {
+      "name": "Enclosed Auto Transport", 
+      "description": "Premium enclosed carrier vehicle shipping for luxury and classic cars",
+      "url": "https://fltransportinc.com/blogs/enclosed"
+    },
+    {
+      "name": "Door-to-Door Car Shipping",
+      "description": "Convenient pickup and delivery at your specified locations",
+      "url": "https://fltransportinc.com/blogs/door-to-door"
+    },
+    {
+      "name": "Hawaii & Alaska Car Shipping",
+      "description": "Specialized shipping services to Hawaii and Alaska via mainland terminals",
+      "url": "https://fltransportinc.com/blogs/hawaii-alaska"
+    }
+  ],
+  "service_areas": "United States (Nationwide)",
+  "key_features": [
+    "TruePrice Guarantee - 30-day price lock",
+    "Licensed and insured carriers",
+    "Real-time GPS tracking",
+    "Comprehensive insurance coverage",
+    "Fast pickup and delivery",
+    "24/7 customer support"
+  ],
+  "main_pages": [
+    {
+      "url": "https://fltransportinc.com",
+      "title": "Homepage - Fast & Reliable Auto Transport Services",
+      "description": "Main landing page with service overview and quote form"
+    },
+    {
+      "url": "https://fltransportinc.com/blogs/open",
+      "title": "Open Auto Transport - Affordable Car Shipping",
+      "description": "Complete guide to open auto transport services"
+    },
+    {
+      "url": "https://fltransportinc.com/blogs/enclosed", 
+      "title": "Enclosed Auto Transport - Premium Car Shipping",
+      "description": "Complete guide to enclosed auto transport services"
+    },
+    {
+      "url": "https://fltransportinc.com/blogs/pricing",
+      "title": "Auto Transport Pricing Guide",
+      "description": "Understanding factors that affect car shipping costs"
+    },
+    {
+      "url": "https://fltransportinc.com/blogs/prepare",
+      "title": "How to Prepare Your Car for Shipping",
+      "description": "Essential checklist for preparing your vehicle for transport"
+    }
+  ],
+  "contact": {
+    "website": "https://fltransportinc.com",
+    "phone": "+1-929-923-7706",
+    "country": "United States",
+    "business_hours": "8:00 AM - 8:00 PM (7 days a week)"
+  },
+  "target_keywords": [
+    "auto transport",
+    "car shipping",
+    "vehicle transport",
+    "car carrier",
+    "nationwide car shipping",
+    "fast auto transport",
+    "reliable car shipping",
+    "open transport",
+    "enclosed transport",
+    "door to door car shipping"
+  ],
+  "competitive_advantages": [
+    "TruePrice Guarantee with 30-day price lock",
+    "Fast pickup within 24-72 hours",
+    "Nationwide coverage across all 50 states",
+    "Licensed and insured carrier network",
+    "Real-time tracking and updates",
+    "Transparent pricing with no hidden fees"
+  ]
+}

@@ -1,29 +1,65 @@
 <template>
     <div class="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="bg-white border-b border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Home</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/blogs" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Blog</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name" class="text-gray-700">Common Car Shipping Mistakes</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Image Section -->
         <div class="relative h-[400px] md:h-[500px] overflow-hidden">
-            <NuxtImg src="/mistake.jpg" alt="Common Car Shipping Mistakes to Avoid"
-                class="w-full h-full object-cover" />
+            <NuxtImg 
+                src="/mistake.jpg" 
+                alt="Common car shipping mistakes to avoid - expert guidance for successful vehicle transport"
+                class="w-full h-full object-cover"
+                loading="eager"
+                width="1920"
+                height="500"
+                title="Common Car Shipping Mistakes to Avoid - First Line Transport INC"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-            <!-- <div class="absolute inset-0 flex items-center justify-center">
+            <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center text-white px-4">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Common Mistakes to Avoid</h1>
-                    <p class="text-xl md:text-2xl text-gray-200">Don't let these pitfalls derail your vehicle shipping
-                        experience</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Common Car Shipping Mistakes to Avoid</h1>
+                    <p class="text-xl md:text-2xl text-gray-200">Expert guide to successful vehicle transport without costly errors</p>
                 </div>
-            </div> -->
+            </div>
         </div>
 
         <!-- Main Content -->
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <!-- Introduction -->
             <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Don't Let These Pitfalls Derail Your Vehicle Shipping Experience</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Shipping a car might sound straightforward, but many customers run into avoidable problems that
-                    cause delays, extra costs, or even damage. By proactively avoiding key mistakes, you help ensure a
-                    smoother and more reliable transport experience. Below are the most frequent pitfalls and how to
-                    avoid them.
+                    Shipping a car might sound straightforward, but many customers run into avoidable problems that cause delays, extra costs, or even damage. Whether you're using <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">open transport</NuxtLink>, <NuxtLink to="/blogs/enclosed" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">enclosed transport</NuxtLink>, or specialized services like <NuxtLink to="/blogs/hawaii-alaska" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">Hawaii & Alaska shipping</NuxtLink>, avoiding these common mistakes will ensure a smoother experience.
                 </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    By proactively avoiding key mistakes, you help ensure a smoother and more reliable transport experience with our comprehensive <NuxtLink to="/" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">auto transport services</NuxtLink>. Below are the most frequent pitfalls and how to avoid them.
+                </p>
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                    <p class="text-blue-900 text-sm"><span class="font-semibold">Expert Tip:</span> The key to successful car shipping is preparation, research, and working with experienced professionals who guide you through the process.</p>
+                </div>
             </div>
 
             <!-- Top 7 Mistakes -->
@@ -732,15 +768,74 @@
                 </div>
             </div>
 
+            <!-- FAQ Section -->
+            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What is the biggest mistake when choosing a car shipping company?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">The biggest mistake is not researching the transport company and choosing based solely on the lowest price without verifying credentials, licensing, insurance, and customer reviews. Always check USDOT and MC numbers.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How should I prepare my vehicle for shipping?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Wash your vehicle inside and out, take dated photos from all angles, remove personal belongings, check tire pressure and fluid levels, disable car alarms, and maintain 1/4 tank fuel level. This preparation prevents delays and protects your interests.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">When is the best time to book car shipping?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Book 2-4 weeks in advance for best rates and availability. Fall (September-November) typically offers the best deals, while summer has the highest demand and prices. Avoid booking last minute during peak seasons.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What insurance coverage should I expect?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Request a copy of the carrier's insurance certificate and understand coverage limits. Basic carrier liability may be minimal, so consider gap coverage for luxury or high-value vehicles. Never assume your personal auto insurance covers transit damage.</p>
+                        </div>
+                    </div>
+
+                    <div class="pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How can I avoid hidden fees and price increases?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Get a clear written contract with all terms specified. Ask about potential surcharges for fuel, oversized vehicles, or remote locations. Choose companies that offer price guarantees and avoid those with extremely low quotes that seem too good to be true.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Related Auto Transport Guides</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Open Transport Guide</h3>
+                        <p class="text-gray-700 mb-4">Learn about the most popular and cost-effective vehicle shipping method and how to prepare for open transport service.</p>
+                        <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Read Open Transport Guide →
+                        </NuxtLink>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Door-to-Door Service</h3>
+                        <p class="text-gray-700 mb-4">Discover the convenience of door-to-door car shipping and how it can simplify your vehicle transport experience.</p>
+                        <NuxtLink to="/blogs/door-to-door" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Explore Door-to-Door Service →
+                        </NuxtLink>
+                    </div>
+                </div>
+            </div>
+
             <!-- Final Thoughts -->
             <div class="mt-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Final Thoughts: Ship Smarter, Not Harder
-                </h2>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Final Thoughts: Ship Smarter, Not Harder</h2>
                 <p class="text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto mb-6">
-                    Shipping a car doesn't have to be stressful, but it does require planning and informed
-                    decision-making. By avoiding these seven common mistakes, you'll ensure a smoother, safer experience
-                    with fewer surprises. Whether you're a first-time shipper or a seasoned pro, staying proactive about
-                    research, timing, preparation, and protection pays off.
+                    Shipping a car doesn't have to be stressful, but it does require planning and informed decision-making. By avoiding these seven common mistakes, you'll ensure a smoother, safer experience with fewer surprises. Whether you're a first-time shipper or a seasoned pro, staying proactive about research, timing, preparation, and protection pays off.
                 </p>
                 <p class="text-center text-gray-600 font-semibold">
                     Take the guesswork out of auto transport with First Line Transport INC.
@@ -770,19 +865,166 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+// Modal state management
 const modal = useState('globalModal', () => false)
 
 function openModal(){
     modal.value = !modal.value
 }
-// SEO Meta tags
+
+// SEO Meta Tags
 useHead({
-    title: 'Common Car Shipping Mistakes to Avoid | First Line Transport INC',
+    title: 'Common Car Shipping Mistakes to Avoid - Expert Guide | First Line Transport INC',
     meta: [
         {
             name: 'description',
-            content: 'Learn the top 7 car shipping mistakes and how to avoid them. Expert guidance on choosing reliable transport, proper preparation, and protecting your vehicle.'
+            content: 'Learn the top 7 car shipping mistakes and how to avoid them. Expert guidance on choosing reliable transport, proper preparation, insurance, and timing for successful vehicle shipping.'
+        },
+        {
+            name: 'keywords',
+            content: 'car shipping mistakes, auto transport errors, vehicle shipping tips, car transport guide, shipping mistakes to avoid, auto transport advice'
+        },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'First Line Transport INC' }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://fltransportinc.com/blogs/mistakes' }
+    ],
+    htmlAttrs: {
+        lang: 'en'
+    }
+})
+
+// Open Graph & Social Media Meta
+useSeoMeta({
+    ogTitle: 'Common Car Shipping Mistakes to Avoid - Expert Guide',
+    ogDescription: 'Learn the top 7 car shipping mistakes and how to avoid them. Expert guidance on choosing reliable transport, proper preparation, insurance, and timing.',
+    ogUrl: 'https://fltransportinc.com/blogs/mistakes',
+    ogImage: 'https://fltransportinc.com/mistake.jpg',
+    ogType: 'article',
+    ogLocale: 'en_US',
+    ogSiteName: 'First Line Transport INC',
+    
+    // Twitter Cards
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'Common Car Shipping Mistakes to Avoid - Expert Guide',
+    twitterDescription: 'Learn the top 7 car shipping mistakes and how to avoid them. Expert guidance for successful vehicle shipping.',
+    twitterImage: 'https://fltransportinc.com/mistake.jpg'
+})
+
+// Structured Data - Article Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Common Car Shipping Mistakes to Avoid - Expert Guide',
+    description: 'Comprehensive guide to avoiding the top 7 car shipping mistakes including company research, pricing, preparation, insurance, and timing.',
+    image: 'https://fltransportinc.com/mistake.jpg',
+    datePublished: '2024-11-01',
+    dateModified: '2024-11-01',
+    author: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC'
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://fltransportinc.com/logo.png'
+        }
+    }
+})
+
+// Breadcrumbs Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://fltransportinc.com'
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://fltransportinc.com/blogs'
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Common Car Shipping Mistakes',
+            item: 'https://fltransportinc.com/blogs/mistakes'
+        }
+    ]
+})
+
+// FAQ Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'What is the biggest mistake when choosing a car shipping company?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'The biggest mistake is not researching the transport company and choosing based solely on the lowest price without verifying credentials, licensing, insurance, and customer reviews.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'How should I prepare my vehicle for shipping?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Wash your vehicle inside and out, take dated photos from all angles, remove personal belongings, check tire pressure and fluid levels, disable car alarms, and maintain 1/4 tank fuel level.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'When is the best time to book car shipping?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Book 2-4 weeks in advance for best rates and availability. Fall (September-November) typically offers the best deals, while summer has the highest demand and prices.'
+            }
+        }
+    ]
+})
+
+// How-To Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Avoid Common Car Shipping Mistakes',
+    description: 'Step-by-step guide to avoiding the most common car shipping mistakes',
+    step: [
+        {
+            '@type': 'HowToStep',
+            name: 'Research Your Transport Provider',
+            text: 'Verify licensing, insurance, and reviews. Check USDOT and MC numbers on FMCSA website.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Request Multiple Quotes',
+            text: 'Compare 3-5 quotes analyzing beyond price – look at included services, insurance, and customer feedback.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Prepare Your Vehicle Properly',
+            text: 'Clean your car, document condition with photos, remove personal belongings, and follow the pre-shipping checklist.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Schedule with Lead Time',
+            text: 'Book 2-4 weeks in advance, consider seasonal demand, and stay flexible with dates for better rates.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Review Insurance & Inspection Process',
+            text: 'Verify coverage limits, conduct thorough inspections at pickup/delivery, and only sign BOL after confirming condition.'
         }
     ]
 })

@@ -1,15 +1,47 @@
 <template>
     <div class="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="bg-white border-b border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Home</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/blogs" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Blog</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name" class="text-gray-700">Auto Transport Pricing Guide</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Image Section -->
         <div class="relative h-[400px] md:h-[500px] overflow-hidden">
-            <NuxtImg src="/calculate.jpg" alt="Understanding Auto Transport Pricing"
-                class="w-full h-full object-cover" />
+            <NuxtImg 
+                src="/calculate.jpg" 
+                alt="Auto transport pricing calculator and cost factors for car shipping services"
+                class="w-full h-full object-cover"
+                loading="eager"
+                width="1920"
+                height="500"
+                title="Auto Transport Pricing Guide - First Line Transport INC"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center text-white px-4">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Understanding Auto Transport Pricing</h1>
-                    <p class="text-xl md:text-2xl text-gray-200">Everything you need to know about vehicle shipping
-                        costs</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Auto Transport Pricing Guide</h1>
+                    <p class="text-xl md:text-2xl text-gray-200">Complete guide to car shipping costs and pricing factors</p>
                 </div>
             </div>
         </div>
@@ -18,12 +50,16 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <!-- Introduction -->
             <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Understanding Car Shipping Costs and Pricing Factors</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    When customers request a quote to ship a vehicle, it often isn't obvious why two seemingly similar
-                    shipments have very different costs. To build trust and clarity, it's essential to understand the
-                    key variables that go into calculating a car transport quote. Here are the major factors that affect
-                    pricing and how they influence cost.
+                    When customers request a quote to ship a vehicle, it often isn't obvious why two seemingly similar shipments have very different costs. Whether you're considering <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">open transport</NuxtLink>, <NuxtLink to="/blogs/enclosed" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">enclosed transport</NuxtLink>, or specialized services like <NuxtLink to="/blogs/hawaii-alaska" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">Hawaii & Alaska shipping</NuxtLink>, understanding pricing factors is crucial.
                 </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    To build trust and clarity, it's essential to understand the key variables that go into calculating a car transport quote. Our comprehensive <NuxtLink to="/" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">auto transport services</NuxtLink> use transparent pricing with no hidden fees. Here are the major factors that affect pricing and how they influence cost.
+                </p>
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                    <p class="text-blue-900 text-sm"><span class="font-semibold">Transparency Promise:</span> Understanding these factors helps you avoid the <NuxtLink to="/blogs/mistakes" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">common car shipping mistakes</NuxtLink> that lead to unexpected costs and delays.</p>
+                </div>
             </div>
 
             <!-- Pricing Factors -->
@@ -498,6 +534,69 @@
                 </div>
             </div>
 
+            <!-- FAQ Section -->
+            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What factors affect auto transport pricing?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Auto transport pricing is affected by distance and route, vehicle size and weight, transport type (open vs enclosed), pickup/delivery locations, seasonality and demand, and additional services like expedited delivery or enhanced insurance.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How much does it cost to ship a car?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Car shipping costs vary by distance: $300-$600 for short distances (0-500 miles), $600-$1,200 for medium distances (500-1,500 miles), and $1,200-$1,800 for long distances (1,500+ miles) for open transport. Enclosed transport costs 30-60% more.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">When is the best time to ship a car for lower costs?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">The best time for lower car shipping costs is during off-peak seasons (winter and early spring) when demand is lower. Booking 2-4 weeks in advance and being flexible with dates also helps reduce costs significantly.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">Are there hidden fees in auto transport pricing?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Reputable companies like First Line Transport INC provide transparent pricing with no hidden fees. However, some companies may add unexpected charges for fuel, storage, or carrier assignment. Always get a written contract with clear terms.</p>
+                        </div>
+                    </div>
+
+                    <div class="pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">How can I get the best auto transport rates?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">To get the best rates: book 2-4 weeks in advance, be flexible with dates, choose open transport for standard vehicles, ship during off-peak seasons, get multiple quotes from reputable companies, and ensure your vehicle is operable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Related Auto Transport Guides</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Open vs Enclosed Transport</h3>
+                        <p class="text-gray-700 mb-4">Compare transport methods and understand how your choice affects pricing. Learn which option offers the best value for your vehicle.</p>
+                        <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Compare Transport Options →
+                        </NuxtLink>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Common Pricing Mistakes</h3>
+                        <p class="text-gray-700 mb-4">Learn about pricing pitfalls and how to avoid companies that use hidden fees or bait-and-switch tactics.</p>
+                        <NuxtLink to="/blogs/mistakes" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Avoid Pricing Mistakes →
+                        </NuxtLink>
+                    </div>
+                </div>
+            </div>
+
             <!-- Final CTA -->
             <div class="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-center text-white">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Your Free Quote?</h2>
@@ -520,22 +619,149 @@
     </div>
 </template>
 
-<script setup>
-
-// SEO Meta tags
-useHead({
-    title: 'Transport Pricing Factors | First Line Transport INC',
-    meta: [
-        {
-            name: 'description',
-            content: 'Learn about car shipping costs, pricing factors, and how to get the best rates. Transparent pricing guide with no hidden fees from First Line Transport INC.'
-        }
-    ]
-})
-
+<script setup lang="ts">
+// Modal state management
 const modal = useState('globalModal', () => false)
 
 function openModal(){
     modal.value = !modal.value
 }
+
+// SEO Meta Tags
+useHead({
+    title: 'Auto Transport Pricing Guide - Understanding Car Shipping Costs | First Line Transport INC',
+    meta: [
+        {
+            name: 'description',
+            content: 'Complete guide to auto transport pricing factors, costs, and how to get the best rates. Learn about car shipping costs with transparent pricing and no hidden fees.'
+        },
+        {
+            name: 'keywords',
+            content: 'auto transport pricing, car shipping costs, vehicle transport rates, auto shipping prices, car transport pricing factors, vehicle shipping costs'
+        },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'First Line Transport INC' }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://fltransportinc.com/blogs/pricing' }
+    ],
+    htmlAttrs: {
+        lang: 'en'
+    }
+})
+
+// Open Graph & Social Media Meta
+useSeoMeta({
+    ogTitle: 'Auto Transport Pricing Guide - Understanding Car Shipping Costs',
+    ogDescription: 'Complete guide to auto transport pricing factors, costs, and how to get the best rates. Learn about car shipping costs with transparent pricing.',
+    ogUrl: 'https://fltransportinc.com/blogs/pricing',
+    ogImage: 'https://fltransportinc.com/calculate.jpg',
+    ogType: 'article',
+    ogLocale: 'en_US',
+    ogSiteName: 'First Line Transport INC',
+    
+    // Twitter Cards
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'Auto Transport Pricing Guide - Understanding Car Shipping Costs',
+    twitterDescription: 'Complete guide to auto transport pricing factors, costs, and how to get the best rates.',
+    twitterImage: 'https://fltransportinc.com/calculate.jpg'
+})
+
+// Structured Data - Article Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Auto Transport Pricing Guide - Understanding Car Shipping Costs',
+    description: 'Comprehensive guide to auto transport pricing including factors that affect costs, pricing examples, and tips for getting the best rates.',
+    image: 'https://fltransportinc.com/calculate.jpg',
+    datePublished: '2024-11-01',
+    dateModified: '2024-11-01',
+    author: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC'
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://fltransportinc.com/logo.png'
+        }
+    }
+})
+
+// Breadcrumbs Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://fltransportinc.com'
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://fltransportinc.com/blogs'
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Auto Transport Pricing Guide',
+            item: 'https://fltransportinc.com/blogs/pricing'
+        }
+    ]
+})
+
+// FAQ Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'What factors affect auto transport pricing?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Auto transport pricing is affected by distance and route, vehicle size and weight, transport type (open vs enclosed), pickup/delivery locations, seasonality and demand, and additional services like expedited delivery.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'How much does it cost to ship a car?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Car shipping costs vary by distance: $300-$600 for short distances (0-500 miles), $600-$1,200 for medium distances (500-1,500 miles), and $1,200-$1,800 for long distances (1,500+ miles) for open transport.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'When is the best time to ship a car for lower costs?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'The best time for lower car shipping costs is during off-peak seasons (winter and early spring) when demand is lower. Booking 2-4 weeks in advance and being flexible with dates also helps reduce costs.'
+            }
+        }
+    ]
+})
+
+// Service Schema for Pricing
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Auto Transport Service',
+    description: 'Professional auto transport services with transparent pricing',
+    provider: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        url: 'https://fltransportinc.com'
+    },
+    areaServed: {
+        '@type': 'Country',
+        name: 'United States'
+    }
+})
 </script>

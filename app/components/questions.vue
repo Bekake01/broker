@@ -1,14 +1,14 @@
 <template>
-  <section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+  <section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="faq-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      <header class="text-center mb-16">
+        <h2 id="faq-heading" class="text-4xl font-bold text-gray-900 mb-4">
           Frequently Asked Questions
         </h2>
         <p class="text-lg text-gray-600">
           Get answers to common questions about our fast and reliable auto transport services
         </p>
-      </div>
+      </header>
       <div class="max-w-4xl mx-auto">
         <UAccordion 
           :items="questions" 

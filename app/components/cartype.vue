@@ -1,18 +1,18 @@
 <template>
-    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gradient-to-b from-gray-50 to-white">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gradient-to-b from-gray-50 to-white" aria-labelledby="vehicle-types-heading">
         <!-- Header Section -->
-        <div class="text-center mb-16">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <header class="text-center mb-16">
+            <h2 id="vehicle-types-heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Tailored Transport Services for All Vehicle Types
             </h2>
             <div class="max-w-4xl mx-auto">
                 <p class="text-lg lg:text-xl text-gray-600 leading-relaxed">
-                    Not all vehicles can ride standard - yours deserves expert care. We offer white-glove transport
+                    Not all vehicles are the same - yours deserves expert care. We offer specialized transport
                     services tailored to your classic, luxury, or specialty vehicle, with carriers specifically equipped
                     to handle what makes yours unique.
                 </p>
             </div>
-        </div>
+        </header>
 
         <!-- Carousel Section -->
         <div class="relative select-none">
@@ -27,12 +27,20 @@
                         
                         <!-- Image with Gradient Overlay -->
                         <div class="relative aspect-square overflow-hidden">
-                            <img :src="item.img" :alt="item.title"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <NuxtImg 
+                                :src="item.img" 
+                                :alt="`${item.title} - Professional auto transport service`"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                loading="lazy"
+                                width="400"
+                                height="400"
+                                format="webp"
+                                quality="80"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
                             
                             <!-- Icon Badge -->
-                            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2.5 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2.5 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
                                 <UIcon :name="item.icon" class="text-blue-600" size="20" />
                             </div>
                         </div>

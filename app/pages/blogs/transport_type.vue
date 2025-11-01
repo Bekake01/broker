@@ -1,14 +1,47 @@
 <template>
     <div class="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="bg-white border-b border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Home</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <NuxtLink to="/blogs" itemprop="item" class="text-blue-600 hover:text-blue-800 transition-colors">
+                            <span itemprop="name">Blog</span>
+                        </NuxtLink>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name" class="text-gray-700">Transport Type Selection Guide</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Image Section -->
         <div class="relative h-[400px] md:h-[500px] overflow-hidden">
-            <NuxtImg src="/types.webp" alt="Choosing the Right Transport Type"
-                class="w-full h-full object-cover" />
+            <NuxtImg 
+                src="/types.webp" 
+                alt="Different car transport types including open and enclosed carriers for vehicle shipping selection"
+                class="w-full h-full object-cover"
+                loading="eager"
+                width="1920"
+                height="500"
+                title="Car Transport Type Selection Guide - First Line Transport INC"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center text-white px-4">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Choosing the Right Transport Type</h1>
-                    <p class="text-xl md:text-2xl text-gray-200">Match your vehicle to the perfect shipping method</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Choosing the Right Car Transport Type</h1>
+                    <p class="text-xl md:text-2xl text-gray-200">Expert guide to matching your vehicle with the perfect shipping method</p>
                 </div>
             </div>
         </div>
@@ -17,12 +50,16 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <!-- Introduction -->
             <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Making the Right Transport Decision for Your Vehicle</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    When choosing how to ship your vehicle, you're making two interconnected decisions: the transport
-                    method (open vs. enclosed, etc.) and how that method fits your specific vehicle type. By
-                    understanding both, you can make an informed choice that balances protection, cost, and peace of
-                    mind.
+                    When choosing how to ship your vehicle, you're making two interconnected decisions: the transport method (<NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">open</NuxtLink> vs. <NuxtLink to="/blogs/enclosed" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">enclosed</NuxtLink>, etc.) and how that method fits your specific vehicle type. Whether you need standard service, <NuxtLink to="/blogs/door-to-door" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">door-to-door convenience</NuxtLink>, or specialized <NuxtLink to="/blogs/hawaii-alaska" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">Hawaii & Alaska shipping</NuxtLink>, understanding your options is crucial.
                 </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    By understanding both transport methods and vehicle requirements, you can make an informed choice that balances protection, cost, and peace of mind. Our comprehensive <NuxtLink to="/" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">auto transport services</NuxtLink> include expert guidance to help you select the optimal shipping method.
+                </p>
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                    <p class="text-blue-900 text-sm"><span class="font-semibold">Expert Tip:</span> Choosing the wrong transport type is one of the <NuxtLink to="/blogs/mistakes" class="text-blue-600 hover:text-blue-800 underline" rel="bookmark">common car shipping mistakes</NuxtLink> that can lead to unexpected costs or inadequate protection for your vehicle.</p>
+                </div>
             </div>
 
             <!-- Main Transport Types -->
@@ -913,6 +950,69 @@
                 </div>
             </div>
 
+            <!-- FAQ Section -->
+            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What is the difference between open and enclosed car transport?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Open transport uses open-air trailers and is more economical, while enclosed transport provides complete protection from weather and debris in a covered trailer. Enclosed costs 30-60% more but offers premium protection for luxury vehicles.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">Which transport type should I choose for my vehicle?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Choose based on vehicle value and condition requirements: Open transport for standard vehicles under $20,000, consider enclosed for vehicles $20,000-$50,000, and strongly recommend enclosed for vehicles over $50,000 or when showroom condition is required.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">When should I choose expedited car transport?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Choose expedited transport for time-sensitive relocations, important meetings or events, last-minute moves, or when you need guaranteed fast delivery within 3-7 days. It costs significantly more but provides priority scheduling.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-200 pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">Do luxury vehicles always need enclosed transport?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">While not mandatory, enclosed transport is strongly recommended for luxury vehicles, sports cars, classic cars, and any vehicle over $50,000 in value. It provides complete protection from weather, debris, and road hazards that could damage premium finishes.</p>
+                        </div>
+                    </div>
+
+                    <div class="pb-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" itemprop="name">What special considerations apply to modified vehicles?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-700" itemprop="text">Modified vehicles with low clearance, oversized tires, or custom parts may require specialized equipment like hydraulic lift gates or enclosed transport. Always communicate modifications upfront to ensure proper handling and avoid additional fees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Related Auto Transport Guides</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Open Transport Guide</h3>
+                        <p class="text-gray-700 mb-4">Learn about the most popular and cost-effective transport method, including when it's the right choice for your vehicle.</p>
+                        <NuxtLink to="/blogs/open" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Explore Open Transport →
+                        </NuxtLink>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Enclosed Transport Guide</h3>
+                        <p class="text-gray-700 mb-4">Discover premium enclosed transport for luxury, classic, and high-value vehicles requiring maximum protection.</p>
+                        <NuxtLink to="/blogs/enclosed" class="text-blue-600 hover:text-blue-800 font-semibold underline" rel="bookmark">
+                            Learn About Enclosed Transport →
+                        </NuxtLink>
+                    </div>
+                </div>
+            </div>
+
             <!-- Final CTA -->
             <div class="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-center text-white">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Not Sure Which Option is Right for You?</h2>
@@ -937,18 +1037,161 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+// Modal state management
 const consultantModal = useState('consultantModal', () => false)
+
 function openConsultantModal(){
     consultantModal.value = !consultantModal.value
 }
-// SEO Meta tags
+
+// SEO Meta Tags
 useHead({
-    title: 'Choosing the Right Car Transport Type | First Line Transport INC',
+    title: 'Choosing the Right Car Transport Type - Complete Guide | First Line Transport INC',
     meta: [
         {
             name: 'description',
             content: 'Complete guide to choosing between open, enclosed, and expedited car transport. Match your vehicle type to the perfect shipping method for optimal protection and value.'
+        },
+        {
+            name: 'keywords',
+            content: 'car transport types, open vs enclosed transport, vehicle shipping methods, auto transport options, car shipping guide, transport type selection'
+        },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'First Line Transport INC' }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://fltransportinc.com/blogs/transport_type' }
+    ],
+    htmlAttrs: {
+        lang: 'en'
+    }
+})
+
+// Open Graph & Social Media Meta
+useSeoMeta({
+    ogTitle: 'Choosing the Right Car Transport Type - Complete Guide',
+    ogDescription: 'Complete guide to choosing between open, enclosed, and expedited car transport. Match your vehicle type to the perfect shipping method.',
+    ogUrl: 'https://fltransportinc.com/blogs/transport_type',
+    ogImage: 'https://fltransportinc.com/types.webp',
+    ogType: 'article',
+    ogLocale: 'en_US',
+    ogSiteName: 'First Line Transport INC',
+    
+    // Twitter Cards
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'Choosing the Right Car Transport Type - Complete Guide',
+    twitterDescription: 'Complete guide to choosing between open, enclosed, and expedited car transport.',
+    twitterImage: 'https://fltransportinc.com/types.webp'
+})
+
+// Structured Data - Article Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Choosing the Right Car Transport Type - Complete Guide',
+    description: 'Comprehensive guide to selecting the optimal car transport method including open, enclosed, and expedited options based on vehicle type and needs.',
+    image: 'https://fltransportinc.com/types.webp',
+    datePublished: '2024-11-01',
+    dateModified: '2024-11-01',
+    author: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC'
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'First Line Transport INC',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://fltransportinc.com/logo.png'
+        }
+    }
+})
+
+// Breadcrumbs Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://fltransportinc.com'
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://fltransportinc.com/blogs'
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Transport Type Selection Guide',
+            item: 'https://fltransportinc.com/blogs/transport_type'
+        }
+    ]
+})
+
+// FAQ Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'What is the difference between open and enclosed car transport?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Open transport uses open-air trailers and is more economical, while enclosed transport provides complete protection from weather and debris in a covered trailer. Enclosed costs 30-60% more but offers premium protection for luxury vehicles.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'Which transport type should I choose for my vehicle?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Choose based on vehicle value and condition requirements: Open transport for standard vehicles under $20,000, consider enclosed for vehicles $20,000-$50,000, and strongly recommend enclosed for vehicles over $50,000 or when showroom condition is required.'
+            }
+        },
+        {
+            '@type': 'Question',
+            name: 'When should I choose expedited car transport?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Choose expedited transport for time-sensitive relocations, important meetings or events, last-minute moves, or when you need guaranteed fast delivery within 3-7 days. It costs significantly more but provides priority scheduling.'
+            }
+        }
+    ]
+})
+
+// How-To Schema
+useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Choose the Right Car Transport Type',
+    description: 'Step-by-step guide to selecting the optimal car transport method',
+    step: [
+        {
+            '@type': 'HowToStep',
+            name: 'Assess Your Vehicle Value',
+            text: 'Determine if your vehicle is under $20,000 (open transport), $20,000-$50,000 (consider enclosed), or over $50,000 (enclosed recommended).'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Consider Condition Requirements',
+            text: 'Decide if minor dust/wear is acceptable (open transport) or if showroom condition is required (enclosed transport).'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Evaluate Special Characteristics',
+            text: 'Consider low clearance, oversized modifications, or non-running status that may require specialized equipment.'
+        },
+        {
+            '@type': 'HowToStep',
+            name: 'Review Budget and Timeline',
+            text: 'Balance cost considerations with timeline requirements to choose between standard, enclosed, or expedited service.'
         }
     ]
 })
