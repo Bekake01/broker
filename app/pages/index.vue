@@ -105,7 +105,6 @@ useSeoMeta({
     twitterCreator: '@FirstLineTransport'
 })
 
-// Structured Data - Organization Schema
 useJsonld({
     '@context': 'https://schema.org',
     '@type': 'Organization',
