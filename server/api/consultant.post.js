@@ -63,21 +63,13 @@ export default defineEventHandler(async (event) => {
       </div>
     `
 
-    // const info = await transporter.sendMail({
-    //   from: 'hello@fltransportinc.com',
-    //   to: "info@fltransportinc.com",
-    //   subject: `Consultant Request from ${full_name}`,
-    //   text: message,
-    //   html: html,
-    // });
-    transport.sendMail({
+    await transport.sendMail({
       from: sender,
       to: recipients,
       subject: `Consultant Request from ${full_name}`,
       text: message,
       html: html,
     });
-
     return { status: 'success', message: 'Consultant request sent successfully' }
   } catch (error) {
     console.error('Error processing consultant request:', error.message)

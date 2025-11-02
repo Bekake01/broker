@@ -97,7 +97,7 @@ export default defineEventHandler(async (event) => {
       </div>
     `
     
-    transport.sendMail({
+    await transport.sendMail({
       from: sender,
       to: recipients,
       subject: "Vehicle transport request",
