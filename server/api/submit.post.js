@@ -1,15 +1,21 @@
-import nodemailer from 'nodemailer'
+import Nodemailer from "nodemailer";
+import { MailtrapTransport } from "mailtrap";
 
-const transporter = nodemailer.createTransport({
-  host: "live.smtp.mailtrap.io",
-  port: 587,
-  secure: false, // true for 465, false for other ports
-  auth: {
-    user: "api",
-    pass: '92481dc640d692719a419b9fc5cd9265'
-    // pass: "ea5540106cfdaf7aaabaf5d46463f015",
-  },
-});
+const TOKEN = "6e62200d58032f76afec2d5edf68913a";
+
+const transport = Nodemailer.createTransport(
+  MailtrapTransport({
+    token: TOKEN,
+  })
+);
+
+const sender = {
+  address: "hello@fltransportinc.com",
+  name: "Quote request",
+};
+const recipients = [
+  "info@fltransportinc.com",
+];
 export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event)
@@ -91,15 +97,13 @@ export default defineEventHandler(async (event) => {
       </div>
     `
     
-
-    const info = await transporter.sendMail({
-      from: 'info@demomailtrap.co',
-      to: "info@fltransportinc.com",
+    transport.sendMail({
+      from: sender,
+      to: recipients,
       subject: "Vehicle transport request",
       text: message,
       html: html,
     });
-    console.log('Email sent successfully',info.messageId)
     return { status: 'success', message: 'Data logged successfully' }
   } catch (error) {
     console.error('Error processing form data:', error)

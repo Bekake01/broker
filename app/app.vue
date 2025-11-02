@@ -30,11 +30,11 @@ useSeoMeta({
 useJsonld({
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': 'https://fltransportinc.com/#organization',
+  '@id': 'https://www.fltransportinc.com/#organization',
   name: 'First Line Transport INC',
   alternateName: 'First Line Transport',
-  url: 'https://fltransportinc.com',
-  logo: 'https://fltransportinc.com/logo.png',
+  url: 'https://www.fltransportinc.com',
+  logo: 'https://www.fltransportinc.com/logo.png',
   description: 'Professional auto transport and car shipping services across the United States with fast, reliable delivery and TruePrice guarantee.',
   foundingDate: '2014',
   address: {
@@ -59,12 +59,12 @@ useJsonld({
 useJsonld({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': 'https://fltransportinc.com/#website',
+  '@id': 'https://www.fltransportinc.com/#website',
   name: 'First Line Transport INC',
-  url: 'https://fltransportinc.com',
+  url: 'https://www.fltransportinc.com',
   description: 'Fast & reliable auto transport across the USA. Professional car shipping services with TruePrice guarantee.',
   publisher: {
-    '@id': 'https://fltransportinc.com/#organization'
+    '@id': 'https://www.fltransportinc.com/#organization'
   }
 })
 </script>

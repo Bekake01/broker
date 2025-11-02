@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 
   // Global Site Configuration for SEO
   site: {
-    url: 'https://fltransportinc.com',
+    url: 'https://www.fltransportinc.com',
     name: 'First Line Transport INC',
     description: 'Fast & reliable auto transport across the USA. Professional car shipping services with TruePrice guarantee, licensed carriers, and nationwide coverage.',
     defaultLocale: 'en',
@@ -187,7 +187,7 @@ export default defineNuxtConfig({
         { rel: 'manifest', href: '/site.webmanifest' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-        { rel: 'dns-prefetch', href: '//fltransportinc.com' }
+        { rel: 'dns-prefetch', href: '//www.fltransportinc.com' }
       ],
       htmlAttrs: {
         lang: 'en'

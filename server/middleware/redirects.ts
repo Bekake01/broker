@@ -32,10 +32,7 @@ export default defineEventHandler((event) => {
     '/index.html': '/',
     '/index.php': '/',
     
-    // Remove www if present
-    ...(url.hostname.startsWith('www.') ? {
-      [url.pathname]: url.pathname
-    } : {})
+    // No additional redirects needed for www handling
   }
   
   // Check for redirects
@@ -43,9 +40,9 @@ export default defineEventHandler((event) => {
     return sendRedirect(event, redirects[url.pathname], 301)
   }
   
-  // Handle www redirect
-  if (url.hostname.startsWith('www.')) {
-    const newUrl = url.href.replace('www.', '')
+  // Handle www redirect - redirect non-www to www
+  if (!url.hostname.startsWith('www.') && (url.hostname === 'fltransportinc.com' || url.hostname.endsWith('.fltransportinc.com'))) {
+    const newUrl = url.href.replace(url.hostname, `www.${url.hostname}`)
     return sendRedirect(event, newUrl, 301)
   }
   

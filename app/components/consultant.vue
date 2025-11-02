@@ -24,7 +24,7 @@
               <UTextarea v-model="state.description" size="lg" class="w-full" :rows="4"
                 placeholder="Tell us about your transport needs, questions, or concerns..." />
             </UFormField>
-
+            <TermCondition />
             <UButton type="submit" size="lg" block :loading="isSubmitting" icon="i-lucide-send">
               {{ isSubmitting ? 'Sending...' : 'Contact Consultant' }}
             </UButton>

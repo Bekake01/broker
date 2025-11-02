@@ -1,14 +1,33 @@
-import nodemailer from 'nodemailer'
+// import nodemailer from 'nodemailer'
 
-const transporter = nodemailer.createTransport({
-  host: "live.smtp.mailtrap.io",
-  port: 587,
-  secure: false, // true for 465, false for other ports
-  auth: {
-    user: "api",
-    pass: '92481dc640d692719a419b9fc5cd9265'
-  },
-});
+// const transporter = nodemailer.createTransport({
+//   host: "live.smtp.mailtrap.io",
+//   port: 587,
+//   secure: false, // true for 465, false for other ports
+//   auth: {
+//     user: "api",
+//     pass: "6e62200d58032f76afec2d5edf68913a"
+//   },
+// });
+
+import Nodemailer from "nodemailer";
+import { MailtrapTransport } from "mailtrap";
+
+const TOKEN = "6e62200d58032f76afec2d5edf68913a";
+
+const transport = Nodemailer.createTransport(
+  MailtrapTransport({
+    token: TOKEN,
+  })
+);
+
+const sender = {
+  address: "hello@fltransportinc.com",
+  name: "Consultant request",
+};
+const recipients = [
+  "info@fltransportinc.com",
+];
 
 export default defineEventHandler(async (event) => {
   try {
@@ -44,18 +63,24 @@ export default defineEventHandler(async (event) => {
       </div>
     `
 
-    const info = await transporter.sendMail({
-      from: 'info@demomailtrap.co',
-      to: "info@fltransportinc.com",
+    // const info = await transporter.sendMail({
+    //   from: 'hello@fltransportinc.com',
+    //   to: "info@fltransportinc.com",
+    //   subject: `Consultant Request from ${full_name}`,
+    //   text: message,
+    //   html: html,
+    // });
+    transport.sendMail({
+      from: sender,
+      to: recipients,
       subject: `Consultant Request from ${full_name}`,
       text: message,
       html: html,
     });
 
-    console.log('Consultant email sent successfully', info.messageId)
     return { status: 'success', message: 'Consultant request sent successfully' }
   } catch (error) {
-    console.error('Error processing consultant request:', error)
+    console.error('Error processing consultant request:', error.message)
     return { status: 'error', message: 'Server error' }
   }
 })

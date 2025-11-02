@@ -135,7 +135,7 @@
               <UInput v-model="state.phone" v-maska="{ mask: '+1 (###) ###-####' }" size="lg" class="w-full"
                 placeholder="(555) 123-4567" autocomplete="tel" />
             </UFormField>
-
+            <TermCondition />
             <div class="flex justify-between pt-4">
               <UButton @click="prevStep" variant="outline" size="lg" icon="i-lucide-arrow-left">
                 Back

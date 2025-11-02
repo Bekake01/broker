@@ -132,7 +132,7 @@
         </div>
 
         <!-- Step 4: Contact Information -->
-        <div v-if="currentStep === 4">
+        <div v-if="currentStep === 4 && !showSuccess">
             <UForm :schema="contactSchema" :state="state" @submit="submitForm" class="space-y-3 sm:space-y-4">
                 <UFormField name="full_name" label="Full Name" class="w-full">
                     <UInput v-model="state.full_name" type="text" size="lg" class="w-full"
@@ -149,56 +149,28 @@
                 </UFormField>
 
                 <!-- Terms and Privacy Disclaimer -->
-                <div class="text-xs text-gray-600 leading-relaxed bg-gray-50/50 p-3 rounded-lg border border-gray-200">
-                    <p>
-                        By providing your phone number and clicking through, you agree to our 
-                        <button 
-                            type="button"
-                            @click="showTermsModal = true" 
-                            class="text-blue-600 hover:text-blue-800 underline font-medium"
-                        >
-                            Terms
-                        </button>, 
-                        <button 
-                            type="button"
-                            @click="showPrivacyModal = true" 
-                            class="text-blue-600 hover:text-blue-800 underline font-medium"
-                        >
-                            Privacy Policy
-                        </button>, 
-                        and authorize us to make or initiate sales calls, text msgs, and prerecorded voicemails to that number using an automated system. Your agreement is not a condition of purchasing products, goods or services. You may opt out at any time.
-                    </p>
-                </div>
+                <TermCondition />
 
                 <div class="flex gap-3">
-                    <UButton type="submit" size="lg" block>
-                        Get Instant Quote
+                    <UButton type="submit" size="lg" block :loading="isSubmitting">
+                        {{ isSubmitting ? 'Submitting...' : 'Get Instant Quote' }}
                     </UButton>
                 </div>
             </UForm>
         </div>
-    </div>
-    <UModal
-  v-model:open="showTermsModal"
-  title="Terms & Conditions" :ui="{content: 'max-w-[1200px]'}"
-  >
-  <!-- :ui="{content: 'max-w-[1000px]'}" -->
-  <template #body>
-    <div class="max-h-[calc(100vh-200px)] overflow-y-auto">
-      <Terms />
-    </div>
-  </template>
-</UModal>
 
-
-    <!-- Privacy Modal -->
-    <UModal v-model:open="showPrivacyModal" title="Privacy Policy" :ui="{content: 'max-w-[1200px]'}">
-        <template #body>
-            <div class="max-h-[calc(100vh-200px)] overflow-y-auto">
-                <Privacy />
+        <!-- Success State -->
+        <div v-if="showSuccess" class="text-center py-8">
+            <div class="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <UIcon name="i-lucide-check" class="w-8 h-8 text-green-600" />
             </div>
-        </template>
-    </UModal>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Quote Request Submitted!</h3>
+            <p class="text-gray-600 mb-6">We'll get back to you with a quote within 24 hours.</p>
+            <div class="text-sm text-gray-500">
+                Redirecting to form in {{ countdown }} seconds...
+            </div>
+        </div>
+    </div>
 </template>
 <script setup lang="ts">
 import * as z from 'zod'
@@ -241,6 +213,11 @@ const stepHeaders = [
 // Current step
 const currentStep = ref(1)
 
+// Form submission state
+const isSubmitting = ref(false)
+const showSuccess = ref(false)
+const countdown = ref(5)
+
 // Step 1 Schema - Locations
 const step1Schema = z.object({
     from_location: z.union([
@@ -273,10 +250,7 @@ const vehicleSchema = z.object({
     inop: z.boolean().default(false)
 })
 
-// Step 2 Schema - Vehicle Details (array)
-const step2Schema = z.object({
-    vehicles: z.array(vehicleSchema).min(1, 'At least one vehicle is required')
-})
+
 
 // Step 3 Schema - Shipping Details
 const shippingSchema = z.object({
@@ -286,7 +260,7 @@ const shippingSchema = z.object({
 
 // Step 4 Schema - Contact Information
 const contactSchema = z.object({
-    email: z.string().email('Valid email is required'),
+    email: z.string().min(1, 'Email is required').email('Valid email is required'),
     phone: z.string().min(10, 'Valid phone number is required').regex(/^[\d\s\-\(\)\+\.]+$/, 'Invalid phone number format'),
     full_name: z.string().min(1, 'Full name is required')
 })
@@ -312,10 +286,6 @@ const currentVehicle = reactive<Vehicle>({
 
 // List of added vehicles
 const vehicles = ref<Vehicle[]>([])
-
-// Modal state for terms and privacy
-const showTermsModal = ref(false)
-const showPrivacyModal = ref(false)
 
 // Search terms for location fields
 const fromSearchTerm = ref('')
@@ -471,36 +441,81 @@ function nextStep() {
     }
 }
 
-// Navigate to previous step
-function prevStep() {
-    if (currentStep.value > 1) {
-        currentStep.value--
-    }
-}
+
 
 // Final form submission
 async function submitForm() {
     const { success } = contactSchema.safeParse(state)
-    if (success) {
-        const formData = {
-            ...state,
-            from_location: state.from_location,
-            to_location: state.to_location,
-            vehicles: vehicles.value
-        }
+    if (!success || vehicles.value.length === 0) return
 
-        try {
-            const response = await $fetch('/api/submit', {
-                method: 'POST',
-                body: formData
-            })
+    isSubmitting.value = true
 
-            console.log('Form submitted successfully:', response)
-            // You can add success handling here (show success message, redirect, etc.)
-        } catch (error) {
-            console.error('Form submission error:', error)
-            // You can add error handling here
-        }
+    const formData = {
+        ...state,
+        from_location: state.from_location,
+        to_location: state.to_location,
+        vehicles: vehicles.value
     }
+
+    try {
+        const response = await $fetch('/api/submit', {
+            method: 'POST',
+            body: formData
+        })
+
+        if (response.status === 'success') {
+            showSuccess.value = true
+            startCountdown()
+        }
+    } catch (error) {
+        console.error('Form submission error:', error)
+        // You can add error handling here
+    } finally {
+        isSubmitting.value = false
+    }
+}
+
+// Start countdown and reset form
+function startCountdown() {
+    countdown.value = 5
+    const timer = setInterval(() => {
+        countdown.value--
+        if (countdown.value <= 0) {
+            clearInterval(timer)
+            resetForm()
+        }
+    }, 1000)
+}
+
+// Reset form to initial state
+function resetForm() {
+    currentStep.value = 1
+    showSuccess.value = false
+    isSubmitting.value = false
+    countdown.value = 5
+
+    // Reset form state
+    state.from_location = undefined
+    state.to_location = undefined
+    state.ship_date = ''
+    state.type = 'Open'
+    state.email = ''
+    state.phone = ''
+    state.full_name = ''
+
+    // Reset vehicle state
+    currentVehicle.vehicle_year = 2025
+    currentVehicle.vehicle_type = ''
+    currentVehicle.vehicle_model = ''
+    currentVehicle.inop = false
+    vehicles.value = []
+
+    // Reset search state
+    fromSearchTerm.value = ''
+    toSearchTerm.value = ''
+    fromLocations.value = []
+    toLocations.value = []
+    showFromInput.value = false
+    showToInput.value = false
 }
 </script>
