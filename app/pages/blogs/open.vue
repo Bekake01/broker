@@ -667,14 +667,14 @@
                     INC. Get a transparent quote with no hidden fees and no upfront payments required.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button @click="openModal()"
-                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
+                    <NuxtLink to="/quote"
+                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg inline-block text-center">
                         Get Your Free Quote
-                    </button>
-                    <button @click="openConsultantModal()"
-                        class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
+                    </NuxtLink>
+                    <NuxtLink to="/consultant"
+                        class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg inline-block text-center">
                         Consult with a Specialist
-                    </button>
+                    </NuxtLink>
                 </div>
                 <p class="text-sm text-blue-200 mt-6">No upfront payments • Best prices guaranteed • Trusted carriers •
                     24/7 support</p>
@@ -685,15 +685,7 @@
 
 <script setup lang="ts">
 // Modal state management
-const modal = useState('globalModal', () => false)
-const consultantModal = useState('consultantModal', () => false)
-
-function openModal() {
-    modal.value = !modal.value
-}
-function openConsultantModal() {
-    consultantModal.value = !consultantModal.value
-}
+// Modal logic removed - using direct navigation
 
 // SEO Meta Tags
 useHead({

@@ -597,10 +597,10 @@
                     Get transparent pricing with no hidden fees. Our TruePrice Guarantee locks in your rate for 30 days.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button @click="openModal()"
-                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
+                    <NuxtLink to="/quote"
+                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg inline-block text-center">
                         Get Instant Quote
-                    </button>
+                    </NuxtLink>
                     <button
                         class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
                         Call +1 (929) 923-7706
@@ -614,11 +614,7 @@
 
 <script setup lang="ts">
 // Modal state management
-const modal = useState('globalModal', () => false)
-
-function openModal(){
-    modal.value = !modal.value
-}
+// Modal logic removed - using direct navigation
 
 // SEO Meta Tags
 useHead({

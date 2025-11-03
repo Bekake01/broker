@@ -557,10 +557,10 @@
                 </div>
 
                 <div class="text-center">
-                    <button @click="openConsultantModal()"
-                        class="bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl">
+                    <NuxtLink to="/consultant"
+                        class="bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl inline-block text-center">
                         Get Free Consultation
-                    </button>
+                    </NuxtLink>
                 </div>
             </div>
 
@@ -690,10 +690,10 @@
                     Experience the convenience of door-to-door car shipping with First Line Transport INC. Get a transparent quote with no hidden fees and no upfront payments required.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button @click="openModal()"
-                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
+                    <NuxtLink to="/quote"
+                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg inline-block text-center">
                         Get Free Quote Now
-                    </button>
+                    </NuxtLink>
                     <button
                         class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
                         Call +1 (929) 923-7706
@@ -707,15 +707,7 @@
 
 <script setup lang="ts">
 // Modal state management
-const modal = useState('globalModal', () => false)
-const consultantModal = useState('consultantModal', () => false)
-
-function openModal(){
-    modal.value = !modal.value
-}
-function openConsultantModal(){
-    consultantModal.value = !consultantModal.value
-}
+// Modal logic removed - using direct navigation
 
 // SEO Meta Tags
 useHead({

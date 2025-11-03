@@ -582,10 +582,10 @@
                 </div>
 
                 <div class="text-center">
-                    <button @click="openConsultantModal()"
-                        class="bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl">
+                    <NuxtLink to="/consultant"
+                        class="bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl inline-block text-center">
                         Get Expert Guidance
-                    </button>
+                    </NuxtLink>
                 </div>
             </div>
 
@@ -670,10 +670,10 @@
                     Get a transparent quote for Hawaii or Alaska car shipping. We'll help you build the best route, timeline, and delivery plan to get your car where it needs to go.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button @click="openModal()"
-                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
+                    <NuxtLink to="/quote"
+                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg inline-block text-center">
                         Request a Quote Now
-                    </button>
+                    </NuxtLink>
                 </div>
                 <p class="text-sm text-blue-200 mt-6">Experienced with non-contiguous states • Full coordination • No hidden fees • Fast responses</p>
             </div>
@@ -683,15 +683,7 @@
 
 <script setup lang="ts">
 // Modal state management
-const modal = useState('globalModal', () => false)
-const consultantModal = useState('consultantModal', () => false)
-
-function openModal(){
-    modal.value = !modal.value
-}
-function openConsultantModal(){
-    consultantModal.value = !consultantModal.value
-}
+// Modal logic removed - using direct navigation
 
 // SEO Meta Tags
 useHead({

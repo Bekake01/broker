@@ -1,170 +1,87 @@
 <template>
-    <div 
-        class="w-full h-16 fixed top-0 left-0 z-50 transition-all duration-300 ease-in-out"
-        :class="[isScrolled 
-                ? 'bg-black/50 backdrop-blur-md shadow-lg' 
-                : 'bg-transparent backdrop-blur-sm'
-        ]"
-    >
+    <div class="w-full h-16 fixed top-0 left-0 z-50 transition-all duration-300 ease-in-out" :class="[isScrolled
+        ? 'bg-black/50 backdrop-blur-md shadow-lg'
+        : 'bg-transparent backdrop-blur-sm'
+    ]">
         <!-- Desktop Layout -->
-        <div class="hidden lg:flex items-center justify-between h-full px-4 sm:px-6 lg:px-8 xl:px-30">
+        <div class="flex items-center justify-between h-full px-4 sm:px-6 lg:px-8 xl:px-30">
             <!-- Logo -->
-            <div class="flex-shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300" @click="scrollto()">
-                <NuxtImg 
-                    src="/logo.png" 
-                    class="h-14 w-auto" 
-                    alt="First Line Transport - Professional Auto Transport Services"
-                    loading="eager"
-                    />
-                </div>
-                <!-- width="160"
-                height="56" -->
-            
-            <!-- Navigation Links -->
-            <!-- <nav class="flex items-center space-x-2 px-8 py-2 rounded-3xl border transition-all duration-300"
-                :class="[isScrolled 
-                    ? ' border-white/20 shadow-sm' 
-                    : ' border-white/20'
-                ]">
-                <NuxtLink v-for="link in links" :key="link.name"
-                    class="px-4 py-2 rounded-2xl text-white font-medium transition-all duration-300 relative group"
-                    :class="[isScrolled 
-                        ? 'hover:text-blue-600 hover:bg-blue-50' 
-                        : 'hover:text-blue-400 hover:bg-white/10'
-                    ]">
-                    {{ link.name }}
-                    <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover:w-3/4 transition-all duration-300"></span>
-                </NuxtLink>
-            </nav> -->
-            
-            <!-- Action Buttons -->
-            <div class="flex-shrink-0 flex gap-3" v-if="isScrolled">
-                <button @click="openModal()"
-                    class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-2.5 rounded-xl cursor-pointer transition-all duration-300 flex items-center gap-2 group/btn shadow-md hover:shadow-xl hover:scale-105">
-                    <span>Request a Quote</span>
-                </button>
+            <div class="flex-shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300"
+                @click="scrollto()">
+                <NuxtImg src="/logo.png" class="h-14 w-auto"
+                    alt="First Line Transport - Professional Auto Transport Services" loading="eager" />
             </div>
-        </div>
 
-        <!-- Mobile Layout - Logo and single button only -->
-        <div class="lg:hidden flex items-center justify-between h-full px-4">
-            <!-- Logo -->
-            <div class="flex-shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300" @click="scrollto()">
-                <NuxtImg 
-                    src="/logo.png" 
-                    class="h-10 w-auto" 
-                    alt="First Line Transport - Auto Transport Services"
-                    loading="eager"
-                    width="120"
-                    height="40"
-                />
-            </div>
-            
-            <!-- Single CTA Button for mobile -->
-            <div class="flex-shrink-0">
-                <button 
-                    @click="openModal()"
-                    class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                    aria-label="Get free auto transport quote"
-                >
-                    Get Quote
-                </button>
+            <!-- Action Buttons -->
+            <div class="flex-shrink-0 flex items-center gap-4">
+                <!-- Phone Number -->
+                <a href="tel:+19299237706"
+                    class="group flex items-center gap-2 text-white hover:text-blue-300 transition-all duration-300 transform hover:scale-105">
+                    <div
+                        class="p-2 rounded-full bg-white/10 backdrop-blur-sm group-hover:bg-blue-500/20 transition-all duration-300">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-sm sm:text-base tracking-wide">+1-929-923-7706</span>
+                </a>
+
+                <!-- Quote Button - Scrolled State -->
+                <NuxtLink to="/quote" v-if="isScrolled"
+                    class="relative overflow-hidden bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white font-bold px-8 py-3 rounded-2xl cursor-pointer transition-all duration-500 flex items-center gap-3 group/btn shadow-lg hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 hover:-translate-y-0.5 border border-blue-500/30">
+                    <!-- Animated background overlay -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 ease-in-out">
+                    </div>
+
+                    <!-- Button content -->
+                    <div class="relative flex items-center gap-2">
+                        <svg class="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span class="text-sm sm:text-base">Request Quote</span>
+                        <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </div>
+
+                    <!-- Pulse effect -->
+                    <div
+                        class="absolute inset-0 rounded-2xl bg-blue-400/30 animate-pulse opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                    </div>
+                </NuxtLink>
+
+                <!-- Quote Button - Non-scrolled State -->
+                <NuxtLink to="/quote" v-if="!isScrolled"
+                    class="relative overflow-hidden bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-semibold px-6 py-2.5 rounded-xl cursor-pointer transition-all duration-300 flex items-center gap-2 group/btn border border-white/20 hover:border-white/40 transform hover:scale-105">
+                    <svg class="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span class="text-sm">Get Quote</span>
+                </NuxtLink>
             </div>
         </div>
     </div>
-
-    <!-- Mobile Menu Modal -->
-    <Teleport to="body">
-        <div 
-            v-if="isMobileMenuOpen"
-            class="fixed inset-0 z-50 lg:hidden"
-            @click="closeMobileMenu"
-        >
-            <!-- Backdrop -->
-            <div 
-                class="absolute inset-0 bg-black/50 transition-opacity duration-300"
-                :class="isMobileMenuOpen ? 'opacity-100' : 'opacity-0'"
-            ></div>
-            
-            <!-- Modal Content -->
-            <div 
-                class="relative bg-white h-full w-full overflow-y-auto transition-transform duration-300 ease-in-out"
-                :class="isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'"
-                @click.stop
-            >
-                <!-- Modal Header -->
-                <div class="flex items-center bg-black/25 justify-between p-4 ">
-                    <NuxtImg src="/logo.png" class="h-10 w-auto" alt="First Line Transport"/>
-                    <UButton icon="heroicons:x-mark" variant="ghost" color="white" @click="closeMobileMenu" />
-                </div>
-                
-                <!-- Navigation Links -->
-                <nav class="p-4 space-y-4">
-                    <NuxtLink v-for="link in links" :key="link.name" :to="link.link" @click="closeMobileMenu"
-                    class="block text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors py-3 border-b border-gray-100">
-                        {{ link.name }}
-                    </NuxtLink>
-                </nav>
-            </div>
-        </div>
-    </Teleport>
 </template>
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-const modal = useState('globalModal', () => false)
+// Modal state removed - using direct navigation
 const isScrolled = ref(false)
-const isMobileMenuOpen = ref(false)
-const links = ref([
-    {
-        // link: '/',
-        name: 'Home'
-    },
-    {
-        // link: '/about',
-        name: 'About'
-    },
-    {
-        // link: '/contact',
-        name: 'Contact'
-    },
-    {
-        // link: '/blogs',
-        name: 'Blogs'
-    }
-])
+
 
 const handleScroll = () => {
     isScrolled.value = window.scrollY > 50
 }
 
-function scrollto(){
-    document.getElementById('maintop').scrollIntoView({behavior: 'smooth'})
-}
-
-const toggleMobileMenu = () => {
-    isMobileMenuOpen.value = !isMobileMenuOpen.value
-    // Prevent body scroll when modal is open
-    if (isMobileMenuOpen.value) {
-        document.body.style.overflow = 'hidden'
-    } else {
-        document.body.style.overflow = ''
-    }
-}
-
-const openModal = () => {
-    modal.value = !modal.value
-}
-
-const consultantModal = useState('consultantModal', () => false)
-
-const openConsultantModal = () => {
-    consultantModal.value = true
-}
-
-
-const closeMobileMenu = () => {
-    isMobileMenuOpen.value = false
-    document.body.style.overflow = ''
+function scrollto() {
+    document.getElementById('maintop').scrollIntoView({ behavior: 'smooth' })
 }
 
 onMounted(() => {
@@ -179,8 +96,4 @@ onUnmounted(() => {
     document.body.style.overflow = ''
 })
 
-// Close mobile menu on route change
-watch(() => useRoute().path, () => {
-    closeMobileMenu()
-})
 </script>

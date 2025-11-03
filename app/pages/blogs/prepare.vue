@@ -1062,14 +1062,14 @@
                     vehicle for a smooth, worry-free transport experience.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button @click="openModal()"
-                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
+                    <NuxtLink to="/quote"
+                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg inline-block text-center">
                         Get Free Quote
-                    </button>
-                    <button @click="openModal()"
-                        class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
+                    </NuxtLink>
+                    <NuxtLink to="/quote"
+                        class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg inline-block text-center">
                         Download Checklist
-                    </button>
+                    </NuxtLink>
                 </div>
                 <p class="text-sm text-blue-200 mt-6">Expert preparation support • 24/7 assistance • No hidden fees</p>
             </div>
@@ -1079,11 +1079,7 @@
 
 <script setup lang="ts">
 // Modal state management
-const modal = useState('globalModal', () => false)
-
-function openModal(){
-    modal.value = !modal.value
-}
+// Modal logic removed - using direct navigation
 
 // SEO Meta Tags
 useHead({

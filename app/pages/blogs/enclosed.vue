@@ -647,14 +647,14 @@
                     <button
                         class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-bold text-lg shadow-lg hover:shadow-xl flex items-center gap-2">
                         <UIcon name="heroicons:calculator-solid" size="24" />
-                        <span @click="openModal()">Get Your Free Quote</span>
+                        <NuxtLink to="/quote">Get Your Free Quote</NuxtLink>
                     </button>
                     
-                    <button @click="openConsultantModal()"
+                    <NuxtLink to="/consultant"
                         class="bg-blue-500 text-white px-8 py-4 rounded-xl hover:bg-blue-400 transition-colors cursor-pointer font-bold text-lg shadow-lg hover:shadow-xl flex items-center gap-2 border-2 border-white">
                         <UIcon name="heroicons:phone-solid" size="24" />
                         <span>Speak with a Specialist</span>
-                    </button>
+                    </NuxtLink>
                 </div>
 
                 <div class="mt-8 pt-8 border-t border-blue-400">
@@ -680,15 +680,7 @@
 
 <script setup lang="ts">
 // Modal state management
-const modal = useState('globalModal', () => false)
-const consultantModal = useState('consultantModal', () => false)
-
-function openModal(){
-    modal.value = !modal.value
-}
-function openConsultantModal(){
-    consultantModal.value = !consultantModal.value
-}
+// Modal logic removed - using direct navigation
 
 // SEO Meta Tags
 useHead({

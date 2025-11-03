@@ -71,10 +71,10 @@
                     <span class="font-bold">Not sure which service is right for you?</span> Our team is here to help you
                     choose the best option.
                 </p>
-                <button @click="openConsultantModal()"
-                    class="bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl">
+                <NuxtLink to="/consultant"
+                    class="bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl inline-block text-center">
                     Get Free Consultation
-                </button>
+                </NuxtLink>
             </div>
         </div>
     </section>
@@ -82,7 +82,7 @@
 
 <script setup>
 const router = useRouter()
-const consultantModal = useState('consultantModal', () => false)
+// Consultant modal state removed - using direct navigation
 
 const services = [
     {
@@ -135,7 +135,5 @@ const services = [
     }
 ]
 
-const openConsultantModal = () => {
-    consultantModal.value = true
-}
+// openConsultantModal function removed - using direct navigation
 </script>

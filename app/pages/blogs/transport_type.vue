@@ -1014,10 +1014,10 @@
                     expert guidance and a free quote today.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button @click="openConsultantModal()"
-                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg">
+                    <NuxtLink to="/consultant"
+                        class="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-lg inline-block text-center">
                         Get Free Consultation
-                    </button>
+                    </NuxtLink>
                     <button
                         class="bg-blue-800 text-white px-8 py-4 rounded-xl hover:bg-blue-900 transition-colors cursor-pointer font-semibold border-2 border-white/30 text-lg">
                         Call +1 (929) 923-7706
@@ -1032,11 +1032,7 @@
 
 <script setup lang="ts">
 // Modal state management
-const consultantModal = useState('consultantModal', () => false)
-
-function openConsultantModal(){
-    consultantModal.value = !consultantModal.value
-}
+// Modal logic removed - using direct navigation
 
 // SEO Meta Tags
 useHead({
