@@ -1,7 +1,10 @@
 <template>
     <div class="text-xs text-gray-600 leading-relaxed bg-gray-50/50 p-3 rounded-lg border border-gray-200">
                     <p>
-                        By providing your phone number and clicking through, you agree to our 
+                        By providing your telephone number and submitting this form , you consent to receive SMS text message from First Line Transport Inc. 
+                        Messages may include vehicle transport quotes, booking confirmations, and service updates. Message frequency varies 
+                        (up to 8 per month). Standard message & data rates may apply. Reply HELP for assistance or STOP to opt out. View our 
+                         
                         <NuxtLink 
                             to="/terms"
                             target="_blank"
@@ -15,8 +18,7 @@
                             class="text-blue-600 hover:text-blue-800 underline font-medium"
                         >
                             Privacy Policy
-                        </NuxtLink>, 
-                        and authorize us to make or initiate sales calls, text msgs, and prerecorded voicemails to that number using an automated system. Your agreement is not a condition of purchasing products, goods or services. You may opt out at any time.
+                        </NuxtLink>.
                     </p>
                 </div>
  
