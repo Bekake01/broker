@@ -52,7 +52,14 @@
 
                                 <TermCondition />
 
-                                <UButton type="submit" size="lg" block :loading="isSubmitting" icon="i-lucide-send">
+                                <div class="pt-4">
+                                    <UCheckbox v-model="termsAccepted"
+                                        label="I agree to receive calls/messages and accept the terms & conditions"
+                                        required />
+                                </div>
+
+                                <UButton type="submit" size="lg" block :loading="isSubmitting"
+                                    :disabled="!termsAccepted || isSubmitting" icon="i-lucide-send">
                                     {{ isSubmitting ? 'Sending...' : 'Contact Consultant' }}
                                 </UButton>
                             </UForm>
@@ -149,6 +156,7 @@ interface ConsultantFormState {
 // Form state
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
+const termsAccepted = ref(false)
 
 // Validation schema
 const consultantSchema = z.object({
@@ -193,6 +201,7 @@ async function submitForm() {
 function resetForm() {
     showSuccess.value = false
     isSubmitting.value = false
+    termsAccepted.value = false
 
     // Reset form state
     state.full_name = ''

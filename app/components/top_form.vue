@@ -151,8 +151,14 @@
                 <!-- Terms and Privacy Disclaimer -->
                 <TermCondition />
 
+                <div class="pt-4">
+                    <UCheckbox v-model="termsAccepted"
+                        label="I agree to receive calls/messages and accept the terms & conditions" required />
+                </div>
+
                 <div class="flex gap-3">
-                    <UButton type="submit" size="lg" block :loading="isSubmitting">
+                    <UButton type="submit" size="lg" block :loading="isSubmitting"
+                        :disabled="!termsAccepted || isSubmitting" icon="i-lucide-send">
                         {{ isSubmitting ? 'Submitting...' : 'Get Instant Quote' }}
                     </UButton>
                 </div>
@@ -217,6 +223,7 @@ const currentStep = ref(1)
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
 const countdown = ref(5)
+const termsAccepted = ref(false)
 
 // Step 1 Schema - Locations
 const step1Schema = z.object({
@@ -493,6 +500,7 @@ function resetForm() {
     showSuccess.value = false
     isSubmitting.value = false
     countdown.value = 5
+    termsAccepted.value = false
 
     // Reset form state
     state.from_location = undefined

@@ -219,11 +219,23 @@
                 
                 <TermCondition />
                 
+                <div class="pt-4">
+                  <UCheckbox 
+                    v-model="termsAccepted" 
+                    label="I agree to receive calls/messages and accept the terms & conditions"
+                    required 
+                  />
+                </div>
+                
                 <div class="flex justify-between pt-4">
-                  <UButton @click="prevStep" variant="outline" size="lg" icon="i-lucide-arrow-left">
-                    Back
-                  </UButton>
-                  <UButton type="submit" size="lg" :loading="isSubmitting" icon="i-lucide-send">
+                  <UButton 
+                    type="submit" 
+                    size="lg" 
+                    block
+                    :loading="isSubmitting" 
+                    :disabled="!termsAccepted || isSubmitting"
+                    icon="i-lucide-send"
+                  >
                     {{ isSubmitting ? 'Submitting...' : 'Get Instant Quote' }}
                   </UButton>
                 </div>
@@ -338,6 +350,7 @@ interface FormState {
 // Form state
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
+const termsAccepted = ref(false)
 
 // Step headers
 const stepHeaders = [
@@ -595,6 +608,7 @@ function resetForm() {
   currentStep.value = 1
   showSuccess.value = false
   isSubmitting.value = false
+  termsAccepted.value = false
 
   // Reset form state
   state.from_location = undefined
