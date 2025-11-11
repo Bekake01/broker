@@ -158,7 +158,7 @@
 
                 <div class="flex gap-3">
                     <UButton type="submit" size="lg" block :loading="isSubmitting"
-                        :disabled="!termsAccepted || isSubmitting" icon="i-lucide-send">
+                        :disabled="isSubmitting" icon="i-lucide-send">
                         {{ isSubmitting ? 'Submitting...' : 'Get Instant Quote' }}
                     </UButton>
                 </div>
@@ -223,7 +223,7 @@ const currentStep = ref(1)
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
 const countdown = ref(5)
-const termsAccepted = ref(false)
+const termsAccepted = ref(true)
 
 // Step 1 Schema - Locations
 const step1Schema = z.object({
@@ -500,7 +500,7 @@ function resetForm() {
     showSuccess.value = false
     isSubmitting.value = false
     countdown.value = 5
-    termsAccepted.value = false
+    termsAccepted.value = true
 
     // Reset form state
     state.from_location = undefined

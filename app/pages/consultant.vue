@@ -59,7 +59,7 @@
                                 </div>
 
                                 <UButton type="submit" size="lg" block :loading="isSubmitting"
-                                    :disabled="!termsAccepted || isSubmitting" icon="i-lucide-send">
+                                    :disabled="isSubmitting" icon="i-lucide-send">
                                     {{ isSubmitting ? 'Sending...' : 'Contact Consultant' }}
                                 </UButton>
                             </UForm>
@@ -156,7 +156,7 @@ interface ConsultantFormState {
 // Form state
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
-const termsAccepted = ref(false)
+const termsAccepted = ref(true)
 
 // Validation schema
 const consultantSchema = z.object({
@@ -201,7 +201,7 @@ async function submitForm() {
 function resetForm() {
     showSuccess.value = false
     isSubmitting.value = false
-    termsAccepted.value = false
+    termsAccepted.value = true
 
     // Reset form state
     state.full_name = ''

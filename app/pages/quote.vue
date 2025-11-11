@@ -233,7 +233,7 @@
                     size="lg" 
                     block
                     :loading="isSubmitting" 
-                    :disabled="!termsAccepted || isSubmitting"
+                    :disabled="isSubmitting"
                     icon="i-lucide-send"
                   >
                     {{ isSubmitting ? 'Submitting...' : 'Get Instant Quote' }}
@@ -350,7 +350,7 @@ interface FormState {
 // Form state
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
-const termsAccepted = ref(false)
+const termsAccepted = ref(true)
 
 // Step headers
 const stepHeaders = [
@@ -608,7 +608,7 @@ function resetForm() {
   currentStep.value = 1
   showSuccess.value = false
   isSubmitting.value = false
-  termsAccepted.value = false
+  termsAccepted.value = true
 
   // Reset form state
   state.from_location = undefined
