@@ -350,7 +350,7 @@ interface FormState {
 // Form state
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
-const termsAccepted = ref(true)
+const termsAccepted = ref(false)
 
 // Step headers
 const stepHeaders = [
@@ -608,7 +608,7 @@ function resetForm() {
   currentStep.value = 1
   showSuccess.value = false
   isSubmitting.value = false
-  termsAccepted.value = true
+  termsAccepted.value = false
 
   // Reset form state
   state.from_location = undefined

@@ -156,7 +156,7 @@ interface ConsultantFormState {
 // Form state
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
-const termsAccepted = ref(true)
+const termsAccepted = ref(false)
 
 // Validation schema
 const consultantSchema = z.object({
@@ -201,7 +201,7 @@ async function submitForm() {
 function resetForm() {
     showSuccess.value = false
     isSubmitting.value = false
-    termsAccepted.value = true
+    termsAccepted.value = false
 
     // Reset form state
     state.full_name = ''
